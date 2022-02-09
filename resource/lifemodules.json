@@ -1,0 +1,415 @@
+{
+	"lifemodules": {
+		"Base": {
+			"stage": -1,
+			"cost": 830,
+			"prereq": {
+				"STR": [
+					5,
+					"min"
+				]
+			},
+			"fixedxps": [
+				{"Language/English": 20},
+				{"Perception": 10},
+				{"STR":100},
+				{"BOD":100},
+				{"RFL":100},
+				{"DEX":100},
+				{"INT":100},
+				{"WIL":100},
+				{"CHA":100},
+				{"EDG":100}
+			]
+		},
+		"Capellan Confederation (House Liao)": {
+			"stage": 0,
+			"cost": 170,
+			"affiliation": "Capellan",
+			"fixedxps": [
+				{"WIL": 50},
+				{"Exceptional Attribute/EDG": 100},
+				{"Compulsion/Paranoia": -100},
+				{"Protocol/Capellan": 10},
+				{"Martial Arts": 5}
+			],
+			"choices": [
+				{
+					"XPs": 20,
+					"options": [
+						"Language/Mandarin Chinese",
+						"Language/Russian",
+						"Language/Cantonese",
+						"Language/Vietnamese",
+						"Language/English"
+					]
+				},
+				{
+					"XPs": 10,
+					"options": [
+						"Language/Russian",
+						"Language/Cantonese",
+						"Language/Vietnamese",
+						"Language/English"
+					]
+				}
+			],
+			"substage1": {
+				"options": {
+					"Capellan Commonality": {
+						"cost": 0,
+						"fixedxps": [
+							{"EDG": 50},
+							{"Wealth": 15},
+							{"Protocol/FedSuns": 5}
+						],
+						"choices": [
+							{
+								"XPs": 5,
+								"options": [
+									"Language/English",
+									"Language/French",
+									"Language/German",
+									"Language/Hindi",
+									"Language/Russian"
+								]
+							}
+						]
+					},
+					"Liao Commonality": {
+						"cost": 0,
+						"fixedxps": [
+							{"INT": 50},
+							{"Reputation": -25},
+							{"Art/Any": 10},
+							{"Martial Arts": 15}
+						],
+						"choices": [
+							{
+								"XPs": 10,
+								"options": [
+									"Protocol/FedSuns",
+									"Protocol/Lyran"
+								]
+							},
+							{
+								"XPs": 15,
+								"options": [
+									"Language/English",
+									"Language/French",
+									"Language/German",
+									"Language/Hindi",
+									"Language/Russian",
+									"Language/Italian",
+									"Language/Scots Gaelic",
+									"Language/Swedish"
+								]
+							}
+						]
+					},
+					"Sian Commonality": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 75},
+							{"Compulsion/Hatred of Federated Suns": -135},
+							{"Citizenship": 50},
+							{"Connections": 50},
+							{"Interest/Capellan History": 10},
+							{"Protocol/Capellan": 15}
+						],
+						"choices": [
+							{
+								"XPs": 10,
+								"options": [
+									"Language/Russian",
+									"Language/Cantonese",
+									"Language/Vietnamese",
+									"Language/English"
+								]
+							}
+						]
+					},
+					"St. Ives Commonality": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 50},
+							{"EDG": 50},
+							{"Reputation": -100},
+							{"Wealth": 50},
+							{"Protocol/Capellan": -15},
+							{"Protocol/FedSuns": 10},
+							{"Art/Any": 5},
+							{"Martial Arts": 10}
+						],
+						"choices": [
+							{
+								"XPs": 15,
+								"options": [
+									"Language/English",
+									"Language/French",
+									"Language/German",
+									"Language/Hindi",
+									"Language/Russian"
+								]
+							}
+						]
+					},
+					"Victoria Commonality": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 35},
+							{"Connections": 50},
+							{"Wealth": -50},
+							{"Language/Any": 15},
+							{"Negotiation": 10},
+							{"Martial Arts": 15}
+						]
+					},
+					"None": { }
+				}
+			}	
+		},
+		"Blue Collar": {
+			"stage": 1,
+			"cost": 210,
+			"setage": 10,
+			"fixedxps": [
+				{"STR": 45},
+				{"BOD": 50},
+				{"DEX": 50},
+				{"INT": 25},
+				{"WIL": -10},
+				{"CHA": -10},
+				{"Career/Any": 10},
+				{"Interest/Any": 5},
+				{"Interest/Any": 5},
+				{"Any": 10},
+				{"Any": 10},
+				{"Any": 10},
+				{"Any": 10}
+			]
+		},
+		"Adolescent Warfare": {
+			"stage": 2,
+			"cost": 500,
+			"setage": 16,
+			"fixedxps": [
+				{"BOD": 40},
+				{"RFL": 40},
+				{"WIL": 50},
+				{"INT": -30},
+				{"Combat Sense": 80},
+				{"Connections": 30},
+				{"Compulsion/Paranoia": -20},
+				{"Enemy": -40},
+				{"Wealth": -20},
+				{"Language/Affiliation": -25},
+				{"Leadership": 25},
+				{"MedTech/General": 25},
+				{"Melee Weapons": 25},
+				{"Negotiation": 15},
+				{"Perception": 25},
+				{"Protocol/Affiliation": -10},
+				{"Running": 40},
+				{"Small Arms": 20},
+				{"Stealth": 30},
+				{"Streetwise/Affiliation": 45},
+				{"Survival/Any": 25}
+			],
+			"flexiblexps": 130
+		},
+		"Technical College": {
+			"stage": 3,
+			"cost": 600,
+			"fixedxps": [
+				{"DEX": 100},
+				{"INT": 100},
+				{"Equipped": 150},
+				{"Computers": 20},
+				{"Interest/Any": 30}
+			],
+			"substage1": {
+				"options": {
+					"Communications": {
+						"agedelta": 1,
+						"field": "Communications"
+					}
+				}
+			},
+			"substage2": {
+				"options": {
+					"Cartographer": {
+						"agedelta": 2,
+						"field": "Cartographer"
+					}
+				}
+			},
+			"substage3": {
+				"options": {
+					"None": {},
+					"Cartographer": {
+						"agedelta": 2,
+						"field": "Cartographer"
+					}
+				}
+			},
+			"flexiblexps": 200
+		},
+		"Civilian Job": {
+			"stage": 4,
+			"cost": 600,
+			"agedelta": 6,
+			"fixedxps": [
+				{"Administration": 75},
+				{"Career/Any Non-Military": 40},
+				{"Computers": 40},
+				{"Driving/Any": 60},
+				{"Interest/Any": 50},
+				{"Interest/Any": 50},
+				{"Leadership": 40},
+				{"Negotiation": 30},
+				{"Protocol/Affiliation": 50}
+			],
+			"flexiblexps": 165
+		}
+	},
+	"macros": {
+		"Fields": {
+			"elementcost": 30,
+			"elementrebate": 6,
+			"Communications": {
+				"fixedxps": [
+					{"Acting": 30},
+					{"Career/Communications": 30},
+					{"Communications/Conventional EM": 30},
+					{"Computers": 30},
+					{"Protocol/Any": 30},
+					{"Sensor Operations": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Cartographer": {
+				"fixedxps": [
+					{"Career/Cartographer": 30},
+					{"Computers": 30},
+					{"Navigation/Air": 30},
+					{"Navigation/Ground": 30},
+					{"Perception": 30},
+					{"Sensor Operations": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			}
+		},
+		"Career/Any Non-Military": [
+			"Career/Mining",
+			"Career/Ship’s Crew",
+			"Career/Agriculture",
+			"Career/Journalist",
+			"Career/Merchant",
+			"Career/Syndicate",
+			"Career/Scientist",
+			"Career/Anthropologist",
+			"Career/Archaeologist",
+			"Career/Cartographer",
+			"Career/Communications",
+			"Career/Doctor",
+			"Career/Engineer",
+			"Career/Lawyer",
+			"Career/Management",
+			"Career/Medtech",
+			"Career/Merchant Marine",
+			"Career/Aerospace Pilot",
+			"Career/Aircraft Pilot",
+			"Career/Politician",
+			"Career/Technician",
+			"Career/Detective",
+			"Career/Police",
+			"Career/Pilot"
+		],
+		"Language": {
+			"Capellan": {
+				"primary": "Language/Mandarin Chinese",
+				"secondary": [
+					"Language/Russian",
+					"Language/Cantonese",
+					"Language/Vietnamese",
+					"Language/English"
+				]
+			},
+			"Draconis": {
+				"primary": "Language/Japanese",
+				"secondary": [
+					"Language/Arabic",
+					"Language/English",
+					"Language/Swedenese"
+				]
+			},
+			"Fedsuns": {
+				"primary": "Language/English",
+				"secondary": [
+					"Language/French",
+					"Language/German",
+					"Language/Hindi",
+					"Language/Russian"
+				]
+			},
+			"Free Worlds": {
+				"primary": "Language/English",
+				"secondary": [
+					"Language/Greek",
+					"Language/Hindi",
+					"Language/Italian",
+					"Language/Mandarin",
+					"Language/Mongolian",
+					"Language/Romanian",
+					"Language/Slovak",
+					"Language/Spanish",
+					"Language/Urdu"
+				]
+			},
+			"Lyran": {
+				"primary": "Language/German",
+				"secondary": [
+					"Language/English",
+					"Language/Italian",
+					"Language/Scots Gaelic",
+					"Language/Swedish"
+				]
+			},
+			"Rasalhague": {
+				"primary": "Language/Swedish",
+				"secondary": [
+					"Language/English",
+					"Language/Japanese",
+					"Language/Swedenese",
+					"Language/German"
+				]
+			},
+			"Minor Periphery": {
+				"primary": "Language/English",
+				"secondary": [
+					"Language/Any"
+				]
+			},
+			"Major Periphery": {
+				"primary": "Language/English"
+			},
+			"Invading Clan": {
+				"primary": "Language/English"
+			},
+			"Homeworld Clan": {
+				"primary": "Language/English"
+			}
+		}
+	}
+}

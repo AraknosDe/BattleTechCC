@@ -1,0 +1,225 @@
+Acrobatics/Free-Fall;RFL,7/SB
+Acrobatics/Gymnastics;RFL,7/SB
+Acting;CHA,8/CB
+Administration;INT+WIL,8/SA
+Animal Handling/Herding;WIL,7/SB
+Animal Handling/Riding;WIL,7/SB
+Animal Handling/Training;WIL,7/SB
+Appraisal;INT,8/CB
+Archery;DEX,7/SB
+Art/Oral Tradition;DEX,8/CB
+Art/Dance;DEX,8/CB
+Art/Drawing;DEX,8/CB
+Art/Music;DEX,8/CB
+Art/Painting;DEX,8/CB
+Art/Poetry;DEX,8/CB
+Art/Sculpture;DEX,8/CB
+Art/Songwriting;DEX,8/CB
+Art/Writing;DEX,8/CB
+Art/Cooking;DEX,8/CB
+Artillery;INT+WIL,8/SA
+Career/Mining;INT,7/SB
+Career/Ship’s Crew;INT,7/SB
+Career/Soldier;INT,7/SB
+Career/Agriculture;INT,7/SB
+Career/Journalist;INT,7/SB
+Career/Merchant;INT,7/SB
+Career/Syndicate;INT,7/SB
+Career/Scientist;INT,7/SB
+Career/Anthropologist;INT,7/SB
+Career/Archaeologist;INT,7/SB
+Career/Cartographer;INT,7/SB
+Career/Communications;INT,7/SB
+Career/Doctor;INT,7/SB
+Career/Engineer;INT,7/SB
+Career/Lawyer;INT,7/SB
+Career/Management;INT,7/SB
+Career/Medtech;INT,7/SB
+Career/Merchant Marine;INT,7/SB
+Career/Aerospace Pilot;INT,7/SB
+Career/Aircraft Pilot;INT,7/SB
+Career/DropShip Pilot;INT,7/SB
+Career/Politician;INT,7/SB
+Career/Technician;INT,7/SB
+Career/Detective;INT,7/SB
+Career/Police;INT,7/SB
+Career/Pilot;INT,7/SB
+Career/Military Scientist;INT,7/SB
+Career/Bodyguard;INT,7/SB
+Climbing;DEX,7/SB
+Communications/Black Box;INT,7/SB
+Communications/Conventional EM;INT,7/SB
+Communications/Hyperpulse Generator;INT,7/SB
+Computers;INT,8/CB
+Cryptography;INT+WIL,9/CA
+Demolitions;DEX+INT,9/CA
+Disguise;CHA,7/CB
+Driving/Ground Vehicles;RFL+DEX,8/SA
+Driving/Rail Vehicles;RFL+DEX,8/SA
+Driving/Sea Vehicles;RFL+DEX,8/SA
+Escape Artist;STR+DEX,9/CA
+Forgery;DEX+INT,8/SA
+Gunnery/Aerospace;RFL+DEX,8/SA
+Gunnery/Air Vehicle;RFL+DEX,8/SA
+Gunnery/Battlesuit;RFL+DEX,8/SA
+Gunnery/Ground Vehicle;RFL+DEX,8/SA
+Gunnery/'Mech;RFL+DEX,8/SA
+Gunnery/ProtoMech;RFL+DEX,8/SA
+Gunnery/Sea Vehicle;RFL+DEX,8/SA
+Gunnery/Spacecraft;RFL+DEX,8/SA
+Gunnery/Turret;RFL+DEX,8/SA
+Interest/Capellan History;INT,8/CB
+Interest/Star League History;INT,8/CB
+Interest/Combine History;INT,8/CB
+Interest/FedSuns History;INT,8/CB
+Interest/Regulan History;INT,8/CB
+Interest/Remembrance;INT,8/CB
+Interest/Marian History;INT,8/CB
+Interest/Roman History;INT,8/CB
+Interest/Clan Remembrance;INT,8/CB
+Interest/Nova Cat Vision Quest;INT,8/CB
+Interest/Clan History;INT,8/CB
+Interest/Theology/Any;INT,8/CB
+Interest/Coyote Rituals;INT,8/CB
+Interest/Star League History;INT,8/CB
+Interest/Terran History;INT,8/CB
+Interest/Writings of Jerome Blake;INT,8/CB
+Interest/Writings of the Master;INT,8/CB
+Interest/Military History;INT,8/CB
+Interest/Solaris Games;INT,8/CB
+Interest/Homeworld History;INT,8/CB
+Interest/Theology;INT,8/CB
+Interest/Archaeology;INT,8/CB
+Interest/Star League History;INT,8/CB
+Interest/Pre-Star League History;INT,8/CB
+Interest/Antiques;INT,8/CB
+Interest/Neural Implants;INT,8/CB
+Interest/Clan Genetics;INT,8/CB
+Interest/Any Academic;INT,8/CB
+Interest/Solaris Night Life;INT,8/CB
+Interest/History (Any one culture);INT,8/CB
+Interest/History (any);INT,8/CB
+Interest/Law;INT,8/CB
+Interest/Geology;INT,8/CB
+Interest/Pharmacology;INT,8/CB
+Interest/BattleMechs;INT,8/CB
+Interest/Modern Fashion;INT,8/CB
+Interest/Music;INT,8/CB
+Interest/The Master’s Word;INT,8/CB
+Interrogation;WIL+CHA,9/CA
+Investigation;INT+WIL,9/CA
+Language/Mandarin Chinese;INT+CHA,8/SA
+Language/Russian;INT+CHA,8/SA
+Language/Cantonese;INT+CHA,8/SA
+Language/Vietnamese;INT+CHA,8/SA
+Language/English;INT+CHA,8/SA
+Language/Japanese;INT+CHA,8/SA
+Language/Arabic;INT+CHA,8/SA
+Language/Swedenese;INT+CHA,8/SA
+Language/French;INT+CHA,8/SA
+Language/German;INT+CHA,8/SA
+Language/Hindi;INT+CHA,8/SA
+Language/Greek;INT+CHA,8/SA
+Language/Italian;INT+CHA,8/SA
+Language/Mandarin;INT+CHA,8/SA
+Language/Mongolian;INT+CHA,8/SA
+Language/Romanian;INT+CHA,8/SA
+Language/Slovak;INT+CHA,8/SA
+Language/Spanish;INT+CHA,8/SA
+Language/Urdu;INT+CHA,8/SA
+Language/Scots Gaelic;INT+CHA,8/SA
+Language/Swedish;INT+CHA,8/SA
+Leadership;WIL+CHA,8/SA
+Martial Arts;RFL,7/SB
+MedTech/General;INT,7/SB
+MedTech/Veterinary;INT,7/SB
+Melee Weapons;DEX,7/SB
+Navigation/Air;INT,7/SB
+Navigation/Ground;INT,7/SB
+Navigation/K-F Jump;INT,7/SB
+Navigation/Sea;INT,7/SB
+Navigation/Space;INT,7/SB
+Negotiation;CHA,8/CB
+Perception;INT,7/SB
+Piloting/Aerospace;RFL+DEX,8/SA
+Piloting/Air Vehicle;RFL+DEX,8/SA
+Piloting/Battlesuit;RFL+DEX,8/SA
+Piloting/'Mech;RFL+DEX,8/SA
+Piloting/ProtoMech;RFL+DEX,8/SA
+Piloting/Spacecraft;RFL+DEX,8/SA
+Prestidigitation/Pick Pocket;DEX,7/SB
+Prestidigitation/Quickdraw;DEX,7/SB
+Prestidigitation/Sleight of Hand;DEX,7/SB
+Protocol/Capellan;WIL+CHA,9/CA
+Protocol/FedSuns;WIL+CHA,9/CA
+Protocol/Lyran;WIL+CHA,9/CA
+Protocol/Combine;WIL+CHA,9/CA
+Protocol/Free Worlds;WIL+CHA,9/CA
+Protocol/Draconis;WIL+CHA,9/CA
+Protocol/Clan (Ghost Bear);WIL+CHA,9/CA
+Protocol/Novo Franklin;WIL+CHA,9/CA
+Protocol/Marian;WIL+CHA,9/CA
+Protocol/Hanseatic;WIL+CHA,9/CA
+Protocol/Castilian;WIL+CHA,9/CA
+Protocol/Umayyad;WIL+CHA,9/CA
+Protocol/JàrnFòlk Families;WIL+CHA,9/CA
+Protocol/Clan;WIL+CHA,9/CA
+Protocol/Diamond Shark;WIL+CHA,9/CA
+Protocol/Ghost Bear;WIL+CHA,9/CA
+Protocol/Hell’s Horses;WIL+CHA,9/CA
+Protocol/Jade Falcon;WIL+CHA,9/CA
+Protocol/Nova Cat;WIL+CHA,9/CA
+Protocol/Snow Raven;WIL+CHA,9/CA
+Protocol/Wolf;WIL+CHA,9/CA
+Protocol/Blood Spirit;WIL+CHA,9/CA
+Protocol/Cloud Cobra;WIL+CHA,9/CA
+Protocol/Coyote;WIL+CHA,9/CA
+Protocol/Fire Mandrill;WIL+CHA,9/CA
+Protocol/Kindraa;WIL+CHA,9/CA
+Protocol/Goliath Scorpion;WIL+CHA,9/CA
+Protocol/Ice Hellion;WIL+CHA,9/CA
+Protocol/Star Adder;WIL+CHA,9/CA
+Protocol/Steel Viper;WIL+CHA,9/CA
+Protocol/Astrokaszy;WIL+CHA,9/CA
+Protocol/Mercenary;WIL+CHA,9/CA
+Protocol/ComStar;WIL+CHA,9/CA
+Protocol/Word of Blake;WIL+CHA,9/CA
+Running;RFL,7/SB
+Science;INT+WIL,9/CA
+Security Systems/Electronic;DEX+INT,9/CA
+Security Systems/Mechanical;DEX+INT,9/CA
+Sensor Operations;INT+WIL,8/SA
+Small Arms;DEX,7/SB
+Stealth;RFL+INT,8/SA
+Strategy;INT+WIL,9/CA
+Streetwise;CHA,8/CB
+Support Weapons;DEX,7/SB
+Surgery;DEX+INT,9/CA
+Survival/Arctic;BOD+INT,9/CA
+Survival/Desert;BOD+INT,9/CA
+Survival/Forest;BOD+INT,9/CA
+Survival/Ocean;BOD+INT,9/CA
+Survival/Mountain;BOD+INT,9/CA
+Survival/Jungle;BOD+INT,9/CA
+Survival/Martian Desert;BOD+INT,9/CA
+Survival/Badlands;BOD+INT,9/CA
+Swimming;STR,7/SB
+Tactics/Infantry;INT+WIL,9/CA
+Tactics/Land;INT+WIL,9/CA
+Tactics/Sea;INT+WIL,9/CA
+Tactics/Air;INT+WIL,9/CA
+Tactics/Space;INT+WIL,9/CA
+Technician/Aeronautics;DEX+INT,9/CA
+Technician/Cybernetics;DEX+INT,9/CA
+Technician/Electronic;DEX+INT,9/CA
+Technician/Jets;DEX+INT,9/CA
+Technician/Mechanical;DEX+INT,9/CA
+Technician/Myomer;DEX+INT,9/CA
+Technician/Nuclear;DEX+INT,9/CA
+Technician/Weapons;DEX+INT,9/CA
+Thrown Weapons/Blades;DEX,7/SB
+Thrown Weapons/Blunt Weapons;DEX,7/SB
+Tracking/Urban;INT+WIL,8/SA
+Tracking/Wilds;INT+WIL,8/SA
+Training;INT+CHA,9/CA
+Zero-G Operations;RFL,7/SB

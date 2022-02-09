@@ -1,0 +1,11 @@
+X apply fields macros to lifemodule choices in database
+
+X put 'Language/Affiliation' in a choice by itself, resolve when displaying
+
+X add xp and age to label in wizard
+
+X add age to xp label in load
+
+filter lifemodules based on stage and other prerequisites
+	add clan vs not clan tag
+	
