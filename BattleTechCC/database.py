@@ -1,7 +1,5 @@
 import json
 import sys
-import os
-from pathlib import Path
 from biography import *
 
 SATtypeslist = ['Interest/', 'Career/', 'Language/', 'Art/', 'Protocol/', 'Career/', 'Survival/']
@@ -9,6 +7,8 @@ SATtypeslist = ['Interest/', 'Career/', 'Language/', 'Art/', 'Protocol/', 'Caree
 skillgenerics = ['Streetwise/']
 
 attributeslist = ['STR', 'BOD', 'RFL', 'DEX', 'INT', 'WIL', 'CHA', 'EDG']
+
+clanrestrictlist = ['clan', 'nonclan', 'no']
 
 nonmilitarycareers = ['Career/Mining',
                     'Career/Ship’s Crew',
@@ -35,6 +35,8 @@ nonmilitarycareers = ['Career/Mining',
                     'Career/Police',
                     'Career/Pilot'
                     ]
+
+
 
 if len(sys.argv) < 2:
     resourcedir = 'resource'
@@ -191,6 +193,14 @@ def parselifemodule(lmitem):
     else:
         affiliation = None
 
+    if 'clanrestrict' in dict.keys():
+        clanrestrict = dict['clanrestrict']
+        if clanrestrict not in clanrestrictlist: #none of valid
+            print("{} clanrestrict '{}' is not allowed".format(name, clanrestrict))
+            clanrestrict = None
+    else:
+        clanrestrict = None
+
     agedelta = None
     setage = None
     prereq = []
@@ -208,7 +218,7 @@ def parselifemodule(lmitem):
         flexiblexps = dict['flexiblexps']
 
     lm = Lifemodule(name, stage=stage, cost=cost, agedelta=agedelta, setage=setage, prereq=prereq,
-                    flexiblexps=flexiblexps, affiliation=affiliation)
+                    flexiblexps=flexiblexps, affiliation=affiliation, clanrestrict=clanrestrict)
 
     if 'fixedxps' in dict.keys():
         for fixedxp in dict['fixedxps']:
@@ -330,8 +340,8 @@ def getalllist():
 def getlangprimary(affiliation):
     if affiliation in languagedict.keys():
         if 'primary' in languagedict[affiliation].keys():
-            return languagedict[affiliation]['primary']
-    return None
+            return [languagedict[affiliation]['primary']]
+    return []
 
 def getlangsecondary(affiliation):
     if affiliation in languagedict.keys():
@@ -340,11 +350,7 @@ def getlangsecondary(affiliation):
     return []
 
 def getlangall(affiliation):
-    primary = getlangprimary(affiliation)
-    if primary is not None:
-        return [primary] + getlangsecondary(affiliation)
-    else:
-        return getlangsecondary(affiliation)
+    return getlangprimary(affiliation) + getlangsecondary(affiliation)
 
 #in form 'Language/<affiliation>' or 'Language/Any <affiliation> Secondary'
 def resolvegenericlang(skill):

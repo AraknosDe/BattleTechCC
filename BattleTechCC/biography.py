@@ -34,6 +34,9 @@ class Biography:
         self.flexiblexpslist = []
         self.finished = False
 
+    #def __repr__(self):
+        #return "Biography(lifemodules=%r, choiceselectionslist)" % ([lm for lm in self.lifemodules], )
+
     def finish(self):
         self.finished = True
 
@@ -114,6 +117,19 @@ class Biography:
                 affiliation = lm.affiliation
         return affiliation
 
+    def getclanrestrict(self):
+        for lm in self.getnonnonelms():
+            if lm.clanrestrict is not None and lm.stage == 0:
+                return lm.clanrestrict
+        return None
+
+    def allowedclanrestrict(self, checklm):
+        clanrestrict = self.getclanrestrict()
+        if clanrestrict == "no" or checklm.clanrestrict == "no":
+            return True
+        return clanrestrict == checklm.clanrestrict
+
+
     # choiceselections = tuple[list[int], list[choiceselections]]
     # choices is a nested list that consists of 2-tuples (choice, subchoice)
     # subchoice is the same kind of list
@@ -172,7 +188,7 @@ class Biography:
 
 class Lifemodule:
 
-    def __init__(self, name, stage=None, cost=0, agedelta=None, setage=None, prereq=[], flexiblexps=0, affiliation=None):
+    def __init__(self, name, stage=None, cost=0, agedelta=None, setage=None, prereq=[], flexiblexps=0, affiliation=None, clanrestrict="no"):
         self.choices: list = []
         self.fixedxps: dict = {}
         self.name: str = name
@@ -184,6 +200,12 @@ class Lifemodule:
         self.flexiblexps: int = flexiblexps
         self.rebate: int = 0
         self.affiliation: str = affiliation
+        #clanrestrict can be 'no', 'clan', or 'nonclan'
+        self.clanrestrict: str = clanrestrict
+
+    def __repr__(self):
+        return "Lifemodule(name=%r, stage=%r, cost=%r, agedelta=%r, setage=%r, prereq=%r, flexiblexps=%r, affiliation=%r, clanrestrict=%r, choices=%r)"\
+               % (self.name, self.stage, self.cost, self.agedelta, self.setage, self.prereq, self.flexiblexps, self.affiliation, self.clanrestrict, self.choices)
 
     def addchoice(self, choice:[]):
         self.choices.append(choice)
@@ -242,6 +264,8 @@ class Lifemodule:
                         print('no affiliation when replacement required')
                         return self.choices
                     langlist = database.getlangall(aff)
+                    if len(langlist) == 0:
+                        print("affiliation {} has no languages associated".format(aff))
                     optionlist = [ChoiceOption(lang, choice[0].xps, prereq=[]) for lang in langlist]
                     returnedchoices.append(optionlist)
                 else:
@@ -269,6 +293,10 @@ class ChoiceOption:
             self.name = SAT
         else:
             self.name = name
+
+    def __repr__(self):
+        return "ChoiceOption(SAT=%r, xps=%r, prereq=%r, name=%r)"\
+               % (self.SAT, self.xps, self.prereq, self.name)
 
     def getname(self):
         return self.name

@@ -1,3 +1,6 @@
+WHEN ADDING AN AFFILIATION, ADD 20 XP TO THE MODULE COST AND A CHOICE FOR PRIMARY/SECONDARY LANG FOR 20XP
+
+
 X apply fields macros to lifemodule choices in database
 
 X put 'Language/Affiliation' in a choice by itself, resolve when displaying

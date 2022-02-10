@@ -1,13 +1,9 @@
 import database
-from tkinter import *
 from tkinter import ttk
 from character import Character
 from biography import Biography
 from biography import Lifemodule
-from multicolumnlistbox import MultiColumnListbox
 from tkinter import filedialog as fd
-from tkinter import messagebox
-import tkinter.font as tkFont
 from functools import partial
 from comboboxtree import Comboboxtreeelem
 import stageselectdialog
@@ -333,6 +329,7 @@ class CharCreator(Frame):
         if thislm != None:
             for choice in thislm.getchoices(bio=self.current_bio):
                 child = Comboboxtreeelem(parent=treeelem, comboboxmaster=self.comboframe)
+
                 child.setvalues([generatedropdowntext(option) for option in choice])
                 child.combobox.bind("<<ComboboxSelected>>", partial(self.updatecombos, child))
                 treeelem.addchild(child)
@@ -463,10 +460,15 @@ class CharCreator(Frame):
 
         self.setup_stage()
 
+    def get_valid_lms(self):
+        possible_lms = database.getstagexlms(self.stage)
+        final_lms = [possible_lm for possible_lm in possible_lms if self.current_bio.allowedclanrestrict(possible_lm)]
+        return final_lms
+
     def setup_stage(self):
         self.clear_lmframe()
 
-        self.currentlmlist = database.getstagexlms(self.stage)
+        self.currentlmlist = self.get_valid_lms()
 
         self.setup_combos(stageheaders[self.stage])
 

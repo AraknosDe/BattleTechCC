@@ -1,4 +1,3 @@
-import tkinter as tk
 import tkinter.font as tkFont
 import tkinter.ttk as ttk
 import btccutil

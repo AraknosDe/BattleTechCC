@@ -1,10 +1,6 @@
-import tkinter as tk
-import tkinter.font as tkFont
-import tkinter.ttk as ttk
 from tkinter import messagebox
 from tkinter import *
 from multicolumnlistbox import MultiColumnListbox
-import btccutil
 
 def insert_list(listbox:Listbox, list):
     for i, e in enumerate(list):
