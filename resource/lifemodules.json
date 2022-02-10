@@ -3,12 +3,6 @@
 		"Base": {
 			"stage": -1,
 			"cost": 830,
-			"prereq": {
-				"STR": [
-					5,
-					"min"
-				]
-			},
 			"fixedxps": [
 				{"Language/English": 20},
 				{"Perception": 10},
@@ -351,6 +345,62 @@
 				}
 			]
 		},
+		"Back Woods": {
+			"stage": 1,
+			"cost": 290,
+			"setage": 10,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"STR": 100},
+				{"RFL": 75},
+				{"BOD": 100},
+				{"INT": -25},
+				{"CHA": -50},
+				{"Equipped": -50},
+				{"Fit": 100},
+				{"Illiterate": -75},
+				{"Toughness": 75},
+				{"Wealth": -75},
+				{"Acting": 5},
+				{"Language/Affiliation": -5},
+				{"Martial Arts": 10},
+				{"Running": 10},
+				{"Melee Weapons": 10},
+				{"Navigation/Ground": 10},
+				{"Perception": 5},
+				{"Survival/Any": 15},
+				{"Tracking/Wilds": 10},
+				{"Any": 5},
+				{"Any": 5},
+				{"Any": 5},
+				{"Any": 5}
+			]
+		},
+		"Born Mercenary Brat": {
+			"stage": 1,
+			"cost": 270,
+			"setage": 10,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"STR": 75},
+				{"BOD": 50},
+				{"RFL": 100},
+				{"WIL": 25},
+				{"EDG": 100},
+				{"CHA": -25},
+				{"Equipped": -50},
+				{"Reputation": -50},
+				{"Illiterate": -50},
+				{"Career/Soldier": 10},
+				{"Interest/Military History": 5},
+				{"Martial Arts": 15},
+				{"Language/Any": 10},
+				{"Perception": 5},
+				{"Melee Weapons": 10},
+				{"Negotiation": 10},
+				{"Streetwise/Any": 10}
+			]
+        	},
 		"Adolescent Warfare": {
 			"stage": 2,
 			"cost": 500,
