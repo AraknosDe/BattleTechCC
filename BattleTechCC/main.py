@@ -684,7 +684,7 @@ class CharCreator(Frame):
 if __name__ == '__main__':
     toplevel = Tk();
     toplevel.title("BattleTech Character Creator")
-    toplevel.resizable(False, False)
+    toplevel.resizable(True, True)
     toplevel.minsize(height=500, width=800)
     #toplevel.geometry('1600x500')
     toplevel.geometry('')

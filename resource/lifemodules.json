@@ -165,17 +165,130 @@
 			}	
 		},
 		"Draconis Combine (House Kurita)": {
+			"stage": 0,
+			"cost": 170,
+			"affiliation": "Combine",
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"WIL": 50},
+				{"Compulsion/Xenophobia": -100},
+				{"Wealth": -50},
+				{"Art/Oral Tradition": 15},
+				{"Martial Arts": 10},
+				{"Protocol/Combine": 15}
+			],
+			"choices": [
+				{
+					"XPs": 20,
+					"options": [
+						"Language/Japanese",
+						"Language/Arabic",
+						"Language/English",
+						"Language/Swedenese"
+					]
+				},
+				{
+					"XPs": 100,
+					"options": [
+						"Pain Resistance",
+						"Combat Sense"
+					]
+				},
+				{
+					"XPs": 10,
+					"options": [
+						"Archery",
+						"Melee Weapons",
+						"Thrown Weapons/Blades",
+						"Thrown Weapons/Blunt Weapons"
+					]
+				}
+			],
+			"substage1": {
+				"options": {
+					"Azami": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 90},
+							{"Compulsion/Xenophobia": -50},
+							{"Equipped": -50},
+							{"Thick-Skinned": 100},
+							{"Wealth": -25},
+							{"Language/Arabic": 10},
+							{"Language/Japanese": -10},
+							{"Martial Arts": 10},
+							{"Melee Weapons": 10},
+							{"Animal Handling/Riding": 5},
+							{"Survival/Any": 10}
+						]
+					},
+					"Benjamin District": {
+						"cost": 0,
+						"fixedxps": [
+							{"Compulsion/Paranoid of Combine Government": -50},
+							{"Connections": 50},
+							{"Patient": 25},
+							{"Wealth": 35},
+							{"Art/Oral Tradition": 5},
+							{"Martial Arts": 10},
+							{"Protocol/Combine": 15},
+							{"Streetwise/Combine": 10}
+						]
+					},
+					"Dieron District": {
+						"cost": 0,
+						"fixedxps": [
+							{"INT": 50},
+							{"WIL": -50},
+							{"Compulsion/Xenophobia": 50},
+							{"Connections": 60},
+							{"Enemy": -100},
+							{"Wealth": 50},
+							{"Interest/Star League History": 5},
+							{"Language/Any": 15},
+							{"Negotiation": 5},
+							{"Art/Any": 15}
+						]
+					},
+					"New Samarkand (Galedon) District": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 100},
+							{"CHA": -50},
+							{"Compulsion/Hatred of Federated Suns": -50},
+							{"Connections": 50},
+							{"Interest/Combine History": 10},
+							{"Melee Weapons": 15},
+							{"Negotiation": 5},
+							{"Protocol/Combine": 10},
+							{"Streetwise/Combine": 10}
+						]
+					},
+					"Pesht District": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 100},
+							{"EDG": -25},
+							{"Compulsion/Hatred of Clans": -100},
+							{"Connections": 20},
+							{"Wealth": 50},
+							{"Martial Arts": 10},
+							{"Melee Weapons": 15},
+							{"Protocol/Combine": 20},
+							{"Streetwise/Combine": 10}
+						]
+					},
+					"None": { }
+				}
+			}	
+		},
+		"Federated Suns (House Davion)": {
 					"stage": 0,
 					"cost": 170,
-					"affiliation": "Combine",
+					"affiliation": "FedSuns",
 					"clanrestrict": "nonclan",
 					"fixedxps": [
-						{"WIL": 50},
-						{"Compulsion/Xenophobia": -100},
-						{"Wealth": -50},
-						{"Art/Oral Tradition": 15},
-						{"Martial Arts": 10},
-						{"Protocol/Combine": 15}
+						{"Protocol/FedSuns": 10}
 					],
 					"choices": [
 						{
