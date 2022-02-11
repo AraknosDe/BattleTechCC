@@ -15,7 +15,8 @@ from math import ceil
 from btccutil import *
 from pathlib import Path
 
-chars_folder = (Path.home() / 'btccchars')
+#chars_folder = (Path.home() / 'btccchars')
+chars_folder = (Path('btccchars'))
 
 SATheader = ['Skill/Attr/Trait', 'XPs', 'Level']
 flexxpheader = ['Skill/Attr/Trait', 'XPs']
