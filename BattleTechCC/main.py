@@ -411,8 +411,11 @@ class CharCreator(Frame):
         if self.stage > -1 and not self.combotreehead.isoptionselected():
             messagebox.showerror("Error", "Please select a lifemodule")
             return
-        if self.stage > -1 and self.freeflexxp != 0:
+        if self.stage > -1 and self.freeflexxp > 0:
             messagebox.showerror("Error", "Please spend all flexible XPs")
+            return
+        if self.stage > -1 and self.freeflexxp < 0:
+            messagebox.showerror("Error", "Too many spent flexible XPs")
             return
 
         if self.stage == 3:
@@ -576,7 +579,7 @@ class CharCreator(Frame):
             return
         selectedSAT = self.flexiblexpslistselect.getselectedstoreitem()
         xpamt = self.flexiblexpslistselect.getxpamt()
-        if xpamt is None:
+        if xpamt is None or xpamt < 0:
             return
 
         self.changeSATflexxp(selectedSAT, xpamt)
@@ -591,11 +594,13 @@ class CharCreator(Frame):
         if not self.flexiblexpslistselect.isstatstateselected():
             return
         selectedSAT = self.flexiblexpslistselect.getselectedstatstateitem()
-        xpamt = self.flexiblexpslistselect.getxpamt()
-        if xpamt is None:
-            return
+        #xpamt = self.flexiblexpslistselect.getxpamt()
+        #if xpamt is None:
+        #    return
+        #print(self.currentflexxpchoices.items())
+        removexpamt = [xp for SAT, xp in self.currentflexxpchoices.items() if SAT == selectedSAT][0]
 
-        self.changeSATflexxp(selectedSAT, -xpamt)
+        self.changeSATflexxp(selectedSAT, -removexpamt)
         self.flexiblexpslistselect.puttuplesinstatstate(self.genflexxptuples())
         self.current_bio.changeflexxpchoice(self.currentflexxpchoices)
         self.update_freeflexxpdisplay()
@@ -606,6 +611,11 @@ class CharCreator(Frame):
         self.current_char = Character()
         self.setup_load()
 
+    def restoreflexxp(self):
+        self.freeflexxp = self.current_bio.getlatestlifemodule().flexiblexps
+        for SAT, xp in self.current_bio.getlatestflexxpchoices().items():
+            self.changeSATflexxp(SAT, xp)
+
     def resumefromloaded(self):
         if self.current_bio.isfinished():
             self.setup_load()
@@ -613,7 +623,7 @@ class CharCreator(Frame):
         else:  # resume from last stage
             self.stage = self.current_bio.getlatestvalidstage()
             self.currentchoices = self.current_bio.getlatestchoices()
-            self.currentflexxpchoices = self.current_bio.getlatestflexxpchoices()
+            self.restoreflexxp()
             self.setup_wizard()
 
     def save_char(self):

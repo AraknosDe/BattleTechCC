@@ -159,7 +159,7 @@ class Biography:
             flexiblexpsum += xps
 
         if flexiblexpsum > lifemodule.flexiblexps:
-            print("Too many points spent on flexxp")
+            #print("Too many points spent on flexxp")
             return
 
         choices = lifemodule.getchoices(bio=self)
