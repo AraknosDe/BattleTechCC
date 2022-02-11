@@ -4,8 +4,6 @@ from biography import *
 
 SATtypeslist = ['Interest/', 'Career/', 'Language/', 'Art/', 'Protocol/', 'Career/', 'Survival/']
 
-skillgenerics = ['Streetwise/']
-
 attributeslist = ['STR', 'BOD', 'RFL', 'DEX', 'INT', 'WIL', 'CHA', 'EDG']
 
 clanrestrictlist = ['clan', 'nonclan', 'no']
@@ -54,6 +52,8 @@ with open(resourcedir + r"/allskills.dat") as f:
 skillstolinkdict = {}
 skillstothreshdict = {}
 skillstotypedict = {}
+lifemodulelist = []
+languagedict = {}
 
 
 for line in skillsraw:
@@ -82,6 +82,29 @@ with open(resourcedir + r"/alltraits.dat") as f:
 traitstopagedict = {l[:l.find(';')]:l[l.find(';')+1:] for l in traitsraw}
 
 traitslist = list(traitstopagedict.keys())
+
+natappg = traitstopagedict['Natural Aptitude']
+for skill in skillslist:
+    newtrait = 'Natural Aptitude/{}'.format(skill)
+    traitstopagedict[newtrait] = natappg
+    traitslist.append(newtrait)
+
+with open(resourcedir + r"/lifemodules.json") as f:
+    data = json.load(f)
+
+    languagedict = data['macros']['Language']
+
+    affiliationlist = languagedict.keys()
+
+    swlink = skillstolinkdict['Streetwise']
+    swthresh = skillstothreshdict['Streetwise']
+    swtype = skillstotypedict['Streetwise']
+    for affiliation in affiliationlist:
+        newskill = 'Streetwise/{}'.format(affiliation)
+        skillstolinkdict[newskill] = swlink
+        skillstothreshdict[newskill] = swthresh
+        skillstotypedict[newskill] = swtype
+        skillslist.append(newskill)
 
 alllist = attributeslist+skillslist+traitslist
 
@@ -113,7 +136,7 @@ with open(resourcedir + r"/phenotype.dat") as f:
 #TODO: import equipment
 
 def getSATtypelist(type):
-    return [item for item in alllist if type in item]
+    return [item for item in alllist if type == item[:item.rfind('/')]]
 
 def parselangmacro(lm, SAT, xps):
     pass
@@ -139,16 +162,16 @@ def parsefieldmacro(curlm, field):
     else:
         curlm.stage = fieldlm.stage
 
-def parseANYmacro(SAT, xps):
+def parseANYmacro(SAT, xps, anyprereq=[]):
     choice = []
     if SAT == "Any":
         for option in alllist:
-            choice.append(ChoiceOption(option, xps, prereq=[]))
+            choice.append(ChoiceOption(option, xps, prereq=anyprereq))
 
     type = SAT[:SAT.find('/')]
 
     for option in getSATtypelist(type):
-        choice.append(ChoiceOption(option, xps, prereq=[]))
+        choice.append(ChoiceOption(option, xps, prereq=anyprereq))
 
     # for interesttype in SATtypeslist:
     #     if interesttype in SAT:
@@ -237,11 +260,23 @@ def parselifemodule(lmitem):
             xps = choicedict['XPs']
             choice = []
             #each option is a string
-            for option in choicedict['options']:
-                if "Any" in option:
-                    choice = choice + parseANYmacro(lm, option, xps)
-                else:
-                    choice.append(ChoiceOption(option, xps, prereq=[]))
+            if 'prereqs' in choicedict.keys():
+                for option, optprereq in zip(choicedict['options'], choicedict['prereqs']):
+                    optprereqparsed = []
+                    if len(optprereq) != 0:
+                        optprereqSAT, (optprereqSATval, optprereqSATcond) = list(optprereq.items())[0]
+                        optprereqparsed = [Prerequisite(optprereqSAT, optprereqSATval, optprereqSATcond)]
+                    if "Any" in option:
+                        choice = choice + parseANYmacro(lm, option, xps, optprereqparsed)
+                    else:
+                        choice.append(ChoiceOption(option, xps, prereq=optprereqparsed))
+            else:
+                for option in choicedict['options']:
+                    if "Any" in option:
+                        choice = choice + parseANYmacro(lm, option, xps)
+                    else:
+                        choice.append(ChoiceOption(option, xps, prereq=[]))
+
             if len(choice) > 0:
                 lm.addchoice(choice)
 
@@ -281,9 +316,6 @@ def parselifemodule(lmitem):
 
     return lm
 
-lifemodulelist = []
-languagedict = {}
-
 with open(resourcedir + r"/lifemodules.json") as f:
     data = json.load(f)
     macros = data['macros']
@@ -297,8 +329,6 @@ with open(resourcedir + r"/lifemodules.json") as f:
         fields[-1].rebate = numelems * elementrebate
         fielddict[fields[-1].name] = fields[-1]
         fieldnames.append(fields[-1].name)
-
-    languagedict = data['macros']['Language']
 
     lifemodules = data['lifemodules']
     for lmitem in lifemodules.items():
@@ -320,9 +350,9 @@ def getallskills():
     return skillslist
 
 def isskill(SAT):
-    for skillgeneric in skillgenerics:
-        if skillgeneric in SAT:
-            return True
+    # for skillgeneric in skillgenerics:
+    #     if skillgeneric in SAT:
+    #         return True
     return SAT in skillslist
 
 def istrait(SAT):

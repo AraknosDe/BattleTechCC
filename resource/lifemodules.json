@@ -288,32 +288,31 @@
 					"affiliation": "FedSuns",
 					"clanrestrict": "nonclan",
 					"fixedxps": [
-						{"Protocol/FedSuns": 10}
+						{"Protocol/FedSuns": 10},
+						{"Language/Affiliation": 20}
 					],
 					"choices": [
 						{
-							"XPs": 20,
-							"options": [
-								"Language/Japanese",
-								"Language/Arabic",
-								"Language/English",
-								"Language/Swedenese"
-							]
-						},
-						{
 							"XPs": 100,
 							"options": [
-								"Pain Resistance",
-								"Combat Sense"
-							]
-						},
-						{
-							"XPs": 10,
-							"options": [
-								"Archery",
-								"Melee Weapons",
-								"Thrown Weapons/Blades",
-								"Thrown Weapons/Blunt Weapons"
+								"Natural Aptitude/Protocol",
+								"Natural Aptitude/Strategy",
+								"None"
+							],
+							"prereqs": [
+								{
+									"INT": [
+										4,
+										"min"
+									]
+								},
+								{
+									"INT": [
+										4,
+										"min"
+									]
+								},
+								{}
 							]
 						}
 					],
@@ -682,7 +681,7 @@
 					"Language/Swedenese"
 				]
 			},
-			"Fedsuns": {
+			"FedSuns": {
 				"primary": "Language/English",
 				"secondary": [
 					"Language/French",

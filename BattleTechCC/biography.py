@@ -59,6 +59,8 @@ class Biography:
             char.addtraitfree(SAT, xps)
         elif database.isattribute(SAT):
             char.addattributefree(SAT, xps)
+        elif SAT == 'None':
+            return
         else:
             print("SAT <{}> not found".format(SAT))
             return
@@ -261,7 +263,7 @@ class Lifemodule:
                 if len(choice) == 1 and choice[0].name == 'Language/Affiliation':
                     aff = bio.getaffiliation()
                     if aff is None:
-                        print('no affiliation when replacement required')
+                        #print('no affiliation when replacement required')
                         return self.choices
                     langlist = database.getlangall(aff)
                     if len(langlist) == 0:
