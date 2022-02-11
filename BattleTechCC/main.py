@@ -670,6 +670,9 @@ class CharCreator(Frame):
             return
 
         sb = load_SaveBlob(filename)
+        if sb is None:
+            messagebox.showerror("Error", "Cannot read character file")
+            return
 
         self.current_char = sb.char
         self.current_bio = sb.bio

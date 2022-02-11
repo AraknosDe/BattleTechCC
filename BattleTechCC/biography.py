@@ -337,6 +337,10 @@ class SaveBlob():
 
 
 def load_SaveBlob(filename) -> SaveBlob:
-    with open(filename, 'rb') as f:
-        return pickle.load(f)
+    try:
+        with open(filename, 'rb') as f:
+            return pickle.load(f)
+    except pickle.UnpicklingError:
+        return None
+
 
