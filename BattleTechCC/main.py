@@ -41,8 +41,8 @@ class CharCreator(Frame):
     def __init__(self, master):
         super().__init__(master)
         #self.configure(height=500, width=1600)
-        #self.pack_propagate(0)
-        self.pack(fill='both', expand=1)
+        self.pack_propagate(True)
+        self.pack(fill='both', expand=True)
         self.setup_menuwork()
         self.setup_main()
         self.current_char = Character()
@@ -55,6 +55,9 @@ class CharCreator(Frame):
         self.nextstageoptions = []
         self.titlefont = tkFont.Font(font='TkDefaultFont')
         self.titlefont.configure(size=18)
+
+    def update_windowsize(self):
+        self.master.geometry('')
 
     def clear_frame(self):
         for widget in self.winfo_children():
@@ -682,8 +685,8 @@ if __name__ == '__main__':
     toplevel = Tk();
     toplevel.title("BattleTech Character Creator")
     toplevel.resizable(False, False)
-    #toplevel.minsize(height=300, width=800)
-    toplevel.geometry('1600x500')
-    #toplevel.geometry('')
+    toplevel.minsize(height=500, width=800)
+    #toplevel.geometry('1600x500')
+    toplevel.geometry('')
     app = CharCreator(toplevel)
     app.mainloop()
