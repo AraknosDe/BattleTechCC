@@ -2,7 +2,7 @@ import json
 import sys
 from biography import *
 
-SATtypeslist = ['Interest/', 'Career/', 'Language/', 'Art/', 'Protocol/', 'Career/', 'Survival/']
+SATtypeslist = ['Interest/', 'Career/', 'Language/', 'Art/', 'Protocol/', 'Career/', 'Survival/', 'Animal Handling/']
 
 attributeslist = ['STR', 'BOD', 'RFL', 'DEX', 'INT', 'WIL', 'CHA', 'EDG']
 
@@ -55,6 +55,20 @@ skillstotypedict = {}
 lifemodulelist = []
 languagedict = {}
 
+def getlangprimary(affiliation):
+    if affiliation in languagedict.keys():
+        if 'primary' in languagedict[affiliation].keys():
+            return [languagedict[affiliation]['primary']]
+    return []
+
+def getlangsecondary(affiliation):
+    if affiliation in languagedict.keys():
+        if 'secondary' in languagedict[affiliation].keys():
+            return languagedict[affiliation]['secondary']
+    return []
+
+def getlangall(affiliation):
+    return getlangprimary(affiliation) + getlangsecondary(affiliation)
 
 for line in skillsraw:
     skill = line[:line.find(';')]
@@ -167,6 +181,15 @@ def parseANYmacro(SAT, xps, anyprereq=[]):
     if SAT == "Any":
         for option in alllist:
             choice.append(ChoiceOption(option, xps, prereq=anyprereq))
+    elif SAT == "Any Trait":
+        for option in traitslist:
+            choice.append(ChoiceOption(option, xps, prereq=anyprereq))
+    elif SAT == "Any Skill":
+        for option in skillslist:
+            choice.append(ChoiceOption(option, xps, prereq=anyprereq))
+    elif SAT == "Any Attribute":
+        for option in attributeslist:
+            choice.append(ChoiceOption(option, xps, prereq=anyprereq))
 
     type = SAT[:SAT.find('/')]
 
@@ -250,6 +273,10 @@ def parselifemodule(lmitem):
                 lm.addchoice(parseANYmacro(SAT, xps))
             elif SAT == 'Language/Affiliation':
                 lm.addchoice([ChoiceOption(SAT, xps, prereq=[])])
+            elif 'Language' in SAT and SAT not in skillslist:
+                aff = SAT[SAT.find('/'):]
+                if aff in affiliationlist:
+                    lm.addchoice(getlangall(aff))
             elif SAT in macros.keys():
                 lm.addchoice(parselistmacro(SAT, xps))
             else:
@@ -267,17 +294,26 @@ def parselifemodule(lmitem):
                         optprereqSAT, (optprereqSATval, optprereqSATcond) = list(optprereq.items())[0]
                         optprereqparsed = [Prerequisite(optprereqSAT, optprereqSATval, optprereqSATcond)]
                     if "Any" in option:
-                        choice = choice + parseANYmacro(lm, option, xps, optprereqparsed)
+                        choice = choice + parseANYmacro(option, xps, optprereqparsed)
+                    elif 'Language' in option and option not in skillslist:
+                        aff = option[option.find('/')+1:]
+                        if aff in affiliationlist:
+                            choice = choice + [ChoiceOption(lang, xps, prereq=optprereqparsed) for lang in getlangall(aff)]
                     else:
                         choice.append(ChoiceOption(option, xps, prereq=optprereqparsed))
             else:
                 for option in choicedict['options']:
                     if "Any" in option:
-                        choice = choice + parseANYmacro(lm, option, xps)
+                        choice = choice + parseANYmacro(option, xps)
+                    elif 'Language' in option and option not in skillslist:
+                        aff = option[option.find('/')+1:]
+                        if aff in affiliationlist:
+                            choice = choice + [ChoiceOption(lang, xps, prereq=[]) for lang in getlangall(aff)]
                     else:
                         choice.append(ChoiceOption(option, xps, prereq=[]))
 
             if len(choice) > 0:
+                choice = list(set(choice))
                 lm.addchoice(choice)
 
     if 'substage1' in dict.keys():
@@ -367,20 +403,7 @@ def getstagexlms(stage):
 def getalllist():
     return alllist
 
-def getlangprimary(affiliation):
-    if affiliation in languagedict.keys():
-        if 'primary' in languagedict[affiliation].keys():
-            return [languagedict[affiliation]['primary']]
-    return []
 
-def getlangsecondary(affiliation):
-    if affiliation in languagedict.keys():
-        if 'secondary' in languagedict[affiliation].keys():
-            return languagedict[affiliation]['secondary']
-    return []
-
-def getlangall(affiliation):
-    return getlangprimary(affiliation) + getlangsecondary(affiliation)
 
 #in form 'Language/<affiliation>' or 'Language/Any <affiliation> Secondary'
 def resolvegenericlang(skill):

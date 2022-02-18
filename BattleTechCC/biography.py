@@ -303,6 +303,14 @@ class ChoiceOption:
     def getname(self):
         return self.name
 
+    def __eq__(self, other):
+        if type(other) == type(self):
+            return self.xps == other.xps and self.SAT == other.SAT and self.prereq == other.prereq and self.name == other.name
+        return False
+
+    def __hash__(self):
+        return hash((self.xps, self.SAT, hash(tuple(self.prereq)), self.name))
+
 class Prerequisite:
 
     def __init__(self, SAT, level, minmax='min'):
