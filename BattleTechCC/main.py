@@ -22,7 +22,7 @@ SATheader = ['Skill/Attr/Trait', 'XPs', 'Level']
 flexxpheader = ['Skill/Attr/Trait', 'XPs']
 prereqheader = ['Skill/Attr/Trait', 'Level', 'Min/Max']
 numchoicecolumns = 9
-maxnumchoices = 8
+maxnumchoices = 20
 choicecolumnspan = 8
 cboxwidthaddlpix = 30
 
@@ -196,6 +196,9 @@ class CharCreator(Frame):
             parent = self.combotreehead
 
         if thislm != None:
+
+            #if thislm.name == 'Merchant Marine':
+
             for choice, choiceindex, subchoiceselections in zip(thislm.getchoices(bio=self.current_bio), choiceselections[0], choiceselections[1]):
                 child = Comboboxtreeelem(parent=parent, comboboxmaster=self.comboframe)
                 child.setvalues([generatedropdowntext(option) for option in choice])
@@ -411,15 +414,20 @@ class CharCreator(Frame):
 
         # self.combotreehead.combobox.grid(row=0, column=0, columnspan=choicecolumnspan, sticky=EW, padx=combobox_xpad)
 
-    def advancestage(self):
+    def continue_allowed(self):
         if self.stage > -1 and not self.combotreehead.isoptionselected():
             messagebox.showerror("Error", "Please select a lifemodule")
-            return
+            return False
         if self.stage > -1 and self.freeflexxp > 0:
             messagebox.showerror("Error", "Please spend all flexible XPs")
-            return
+            return False
         if self.stage > -1 and self.freeflexxp < 0:
             messagebox.showerror("Error", "Too many spent flexible XPs")
+            return False
+        return True
+
+    def advancestage(self):
+        if not self.continue_allowed():
             return
 
         if self.stage == 3:
@@ -490,6 +498,8 @@ class CharCreator(Frame):
         self.updatewizardcharacterdisplay()
 
     def finish_char(self):
+        if not self.continue_allowed():
+            return
         self.current_bio.finish()
         self.setup_load()
 

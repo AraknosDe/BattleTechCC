@@ -31,7 +31,9 @@ nonmilitarycareers = ['Career/Mining',
                     'Career/Technician',
                     'Career/Detective',
                     'Career/Police',
-                    'Career/Pilot'
+                    'Career/Pilot',
+                    'Career/Accountant',
+                    'Career/Cook'
                     ]
 
 
@@ -360,7 +362,7 @@ with open(resourcedir + r"/lifemodules.json") as f:
     elementrebate = fieldmacros.pop('elementrebate')
     for field in fieldmacros.items():
         fields.append(parselifemodule(field))
-        numelems = len(fields[-1].fixedxps)
+        numelems = len(fields[-1].fixedxps) + len(fields[-1].choices)
         fields[-1].cost = numelems * elementcost
         fields[-1].rebate = numelems * elementrebate
         fielddict[fields[-1].name] = fields[-1]
