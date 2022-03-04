@@ -27,7 +27,11 @@ class StageSelectDialog(Dialog):
         self.result = optionidx
         self.cancel()
 
-def askstageselect(stageoptions):
-    s = StageSelectDialog(stageoptions)
+    def cancel(self):
+
+        super().cancel()
+
+def askstageselect(stageoptions, parent):
+    s = StageSelectDialog(stageoptions, parent)
     return s.result
 

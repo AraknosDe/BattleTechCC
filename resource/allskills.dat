@@ -19,7 +19,7 @@ Art/Writing;DEX,8/CB
 Art/Cooking;DEX,8/CB
 Artillery;INT+WIL,8/SA
 Career/Mining;INT,7/SB
-Career/Ship’s Crew;INT,7/SB
+Career/Ship's Crew;INT,7/SB
 Career/Soldier;INT,7/SB
 Career/Agriculture;INT,7/SB
 Career/Journalist;INT,7/SB
@@ -45,7 +45,9 @@ Career/Detective;INT,7/SB
 Career/Police;INT,7/SB
 Career/Pilot;INT,7/SB
 Career/Military Scientist;INT,7/SB
-Career/Bodyguard;INT,7/SB
+Career/Accountant;INT,7/SB
+Career/Cook;INT,7/SB
+Career/MedTech;INT,7/SB
 Climbing;DEX,7/SB
 Communications/Black Box;INT,7/SB
 Communications/Conventional EM;INT,7/SB
@@ -185,7 +187,12 @@ Protocol/Mercenary;WIL+CHA,9/CA
 Protocol/ComStar;WIL+CHA,9/CA
 Protocol/Word of Blake;WIL+CHA,9/CA
 Running;RFL,7/SB
-Science;INT+WIL,9/CA
+Science/Biology;INT+WIL,9/CA
+Science/Chemistry;INT+WIL,9/CA
+Science/Mathematics;INT+WIL,9/CA
+Science/Physics;INT+WIL,9/CA
+Science/Metallurgy;INT+WIL,9/CA
+Science/Biochemistry;INT+WIL,9/CA
 Security Systems/Electronic;DEX+INT,9/CA
 Security Systems/Mechanical;DEX+INT,9/CA
 Sensor Operations;INT+WIL,8/SA
@@ -194,7 +201,8 @@ Stealth;RFL+INT,8/SA
 Strategy;INT+WIL,9/CA
 Streetwise;CHA,8/CB
 Support Weapons;DEX,7/SB
-Surgery;DEX+INT,9/CA
+Surgery/General;DEX+INT,9/CA
+Surgery/Veterinary;DEX+INT,9/CA
 Survival/Arctic;BOD+INT,9/CA
 Survival/Desert;BOD+INT,9/CA
 Survival/Forest;BOD+INT,9/CA

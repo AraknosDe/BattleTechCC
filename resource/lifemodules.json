@@ -318,23 +318,29 @@
 					],
 					"substage1": {
 						"options": {
-							"Azami": {
+							"Capellan March": {
 								"cost": 0,
 								"fixedxps": [
-									{"WIL": 90},
-									{"Compulsion/Xenophobia": -50},
-									{"Equipped": -50},
-									{"Thick-Skinned": 100},
-									{"Wealth": -25},
-									{"Language/Arabic": 10},
-									{"Language/Japanese": -10},
-									{"Martial Arts": 10},
-									{"Melee Weapons": 10},
-									{"Animal Handling/Riding": 5},
-									{"Survival/Any": 10}
+									{"WIL": 40},
+									{"Connections": 25},
+									{"Compulsion/Hatred of Capellan Confederation": -50},
+									{"Protocol/FedSuns": 10},
+									{"Interest/FedSuns History": 10}
+								],
+								"choices": [
+									{
+										"XPs": 5,
+										"options": [
+											"Language/Cantonese",
+											"Language/German",
+											"Language/Mandarin",
+											"Language/Spanish",
+											"Language/Russian"
+										]
+									}
 								]
 							},
-							"Benjamin District": {
+							"Crucis March": {
 								"cost": 0,
 								"fixedxps": [
 									{"Compulsion/Paranoid of Combine Government": -50},
@@ -350,49 +356,410 @@
 							"Dieron District": {
 								"cost": 0,
 								"fixedxps": [
-									{"INT": 50},
-									{"WIL": -50},
-									{"Compulsion/Xenophobia": 50},
-									{"Connections": 60},
-									{"Enemy": -100},
-									{"Wealth": 50},
-									{"Interest/Star League History": 5},
-									{"Language/Any": 15},
-									{"Negotiation": 5},
-									{"Art/Any": 15}
+									{"WIL": 50},
+									{"EDG": -50},
+									{"Art/Any": 10},
+									{"Interest/FedSuns History": 15},
+									{"Protocol/FedSuns": 15}
 								]
 							},
-							"New Samarkand (Galedon) District": {
+							"Draconis March": {
 								"cost": 0,
 								"fixedxps": [
-									{"WIL": 100},
-									{"CHA": -50},
-									{"Compulsion/Hatred of Federated Suns": -50},
-									{"Connections": 50},
-									{"Interest/Combine History": 10},
-									{"Melee Weapons": 15},
-									{"Negotiation": 5},
-									{"Protocol/Combine": 10},
-									{"Streetwise/Combine": 10}
-								]
-							},
-							"Pesht District": {
-								"cost": 0,
-								"fixedxps": [
-									{"WIL": 100},
-									{"EDG": -25},
-									{"Compulsion/Hatred of Clans": -100},
+									{"EDG": 25},
 									{"Connections": 20},
-									{"Wealth": 50},
-									{"Martial Arts": 10},
-									{"Melee Weapons": 15},
-									{"Protocol/Combine": 20},
-									{"Streetwise/Combine": 10}
+									{"Compulsion/Hatred of Draconis Combine": -30},
+									{"Art/Any": 10},
+									{"Interest/FedSuns History": 10},
+									{"Protocol/FedSuns": 5}
+								]
+							},
+							"Outback": {
+								"cost": 0,
+								"fixedxps": [
+									{"STR": 50},
+									{"BOD": 150},
+									{"WIL": 100},
+									{"INT": -100},
+									{"Illiterate": -50},
+									{"Reputation": -50},
+									{"Wealth": -100},
+									{"Streetwise/FedSuns": 10},
+									{"Survival/Any": 20}
+								],
+								"choices": [
+									{
+										"XPs": 10,
+										"options": [
+											"Art/Any",
+											"Interest/Any"
+										]
+									}
 								]
 							},
 							"None": { }
 						}
 					}	
+		},
+		"Lyran Alliance (House Steiner)": {
+			"stage": 0,
+			"cost": 170,
+			"affiliation": "Lyran",
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"WIL": -50},
+				{"EDG": -50},
+				{"Equipped": 100},
+				{"Extra Income": 50},
+				{"Wealth": 100},
+				{"Negotiation": 15},
+				{"Appraisal": 10},
+				{"Protocol/Lyran": 15}
+			],
+			"choices": [
+				{
+					"XPs": -100,
+					"options": [
+						"Combat Paralysis",
+						"Glass Jaw"
+					]
+				}
+			],
+			"substage1": {
+				"options": {
+					"Alarion Province": {
+						"cost": 0,
+						"fixedxps": [
+							{"CHA": -50},
+							{"Wealth": 70},
+							{"Administration": 10},
+							{"Interest/Any": 10},
+							{"Language/Any": 10},
+							{"Negotiation": 10}
+						]
+					},
+					"Bolan Province": {
+						"cost": 0,
+						"fixedxps": [
+							{"Compulsion/Hatred of House Marik": -50},
+							{"Connections": 50},
+							{"Wealth": 25},
+							{"Administration": 5},
+							{"Negotiation": 15},
+							{"Protocol/Lyran": 10},
+							{"Streetwise/Lyran": 5}
+						]
+					},
+					"Coventry Province": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 100},
+							{"Compulsion/Hatred of Clans": -95},
+							{"Wealth": 25},
+							{"Administration": 10},
+							{"Negotiation": 10},
+							{"Protocol/Lyran": 10}
+						]
+					},
+					"Donegal Province": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 50},
+							{"Compulsion/Greedy": -75},
+							{"Connections": 50},
+							{"Reputation": -50},
+							{"Wealth": 50},
+							{"Appraisal": 10},
+							{"Negotiation": 10},
+							{"Protocol/Lyran": 15}
+						]
+					},
+					"Skye Province": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 100},
+							{"Connections": 85},
+							{"Reputation": -150},
+							{"Language/Scots Gaelic": 10},
+							{"Negotiation": 15},
+							{"Protocol/Lyran": -15},
+							{"Streetwise/Lyran": 15}
+						]
+					},
+					"None": { }
+				}
+			}	
+		},
+		"Free Worlds League (House Marik)": {
+			"stage": 0,
+			"cost": 170,
+			"affiliation": "Free Worlds",
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"Language/Any Secondary": 15},
+				{"Art/Any": 10}
+			],
+			"substage1": {
+				"options": {
+					"Marik Commonwealth": {
+						"cost": 0,
+						"fixedxps": [
+							{"Wealth": 100},
+							{"Equipped": 100},
+							{"Reputation": -100},
+							{"Appraisal": 5},
+							{"Negotiation": 10},
+							{"Protocol/Free Worlds": 10}
+						]
+					},
+					"Principality of Regulus": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 75},
+							{"Gregarious": 75},
+							{"Compulsion/Atrean Opponent": -50},
+							{"Reputation": -50},
+							{"Interest/Regulan History": 20},
+							{"Negotiation": 25},
+							{"Perception": 15},
+							{"Protocol/Free Worlds": 15}
+						]
+					},
+					"Duchy of Oriente": {
+						"cost": 0,
+						"fixedxps": [
+							{"Reputation": 100},
+							{"Appraisal": 5},
+							{"Negotiation": 15},
+							{"Technician/Any": 5}
+						]
+					},
+					"Duchy of Andurien": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 50},
+							{"Combat Sense": 215},
+							{"Compulsion/Hatred of House Liao": -100},
+							{"Compulsion/Atrean Opponent": -50},
+							{"Reputation": -30},
+							{"Negotiation": 15},
+							{"Perception": 10},
+							{"Protocol/Free Worlds": 15}
+						]
+					},
+					"Other FWL Worlds": {
+						"cost": 0,
+						"fixedxps": [
+							{"Any Trait": 35},
+							{"Appraisal": 15},
+							{"Language/Any": 20},
+							{"Protocol/Free Worlds": 10},
+							{"Any Skill": 10},
+							{"Any Skill": 10},
+							{"Any": 25}
+						]
+					},
+					"None": { }
+				}
+			}	
+		},
+		"Free Rasalhague Republic": {
+			"stage": 0,
+			"cost": 120,
+			"affiliation": "Rasalhague",
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"WIL": 25},
+				{"EDG": -25},
+				{"Negotiation": 15},
+				{"Interest/Any": 10}
+			],
+			"substage1": {
+				"options": {
+					"Clan War Expatriate": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 125},
+							{"EDG": 100},
+							{"Compulsion/Hatred of Clans": -150},
+							{"Wealth": -50},
+							{"Martial Arts": 10},
+							{"Small Arms": 15}
+						],
+						"choices": [
+							{
+								"XPs": 15,
+								"options": [
+									"Language/Lyran",
+									"Language/Combine"
+								]
+							},
+							{
+								"XPs": 10,
+								"options": [
+									"Protocol/Lyran",
+									"Protocol/Combine"
+								]
+							}
+						]
+					},
+					"Ghost Bear Dominion": {
+						"cost": 0,
+						"fixedxps": [
+							{"Equipped": 50},
+							{"Introvert": -25},
+							{"Reputation": -25},
+							{"Protocol/Clan (Ghost Bear)": 20},
+							{"Interest/Any": 10},
+							{"Interest/Remembrance": 10},
+							{"Negotiation": 10},
+							{"Martial Arts": 15},
+							{"Melee Weapons": 10}
+						]
+					},
+					"None": { }
+				}
+			}	
+		},
+		"Minor Periphery": {
+			"stage": 0,
+			"cost": 95,
+			"affiliation": "Periphery",
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"Equipped": -150},
+				{"Perception": 15},
+				{"Survival/Any": 20}
+			],
+			"substage1": {
+				"options": {
+					"Fiefdom of Randis": {
+						"cost": 0,
+						"fixedxps": [
+							{"BOD": 125},
+							{"EDG": 50},
+							{"Illiterate": -75},
+							{"Wealth": -50},
+							{"Martial Arts": 10},
+							{"Melee Weapons": 10},
+							{"Negotiation": 10},
+							{"Streetwise/Periphery": 15},
+							{"Survival/Any": 20}
+						]
+					},
+					"Franklin Fiefs": {
+						"cost": 0,
+						"fixedxps": [
+							{"BOD": 150},
+							{"INT": -100},
+							{"WIL": 50},
+							{"Equipped": -60},
+							{"Illiterate": -90},
+							{"Toughness": 100},
+							{"Martial Arts": 15},
+							{"MedTech/General": 10},
+							{"Protocol/Novo Franklin": 10},
+							{"Streetwise/Periphery": 10},
+							{"Survival/Any": 10}
+						],
+						"choices": [
+							{
+								"XPs": 10,
+								"options": [
+									"Archery",
+									"Melee Weapons",
+									"Negotiation"
+								]
+							}
+						]
+					},
+					"Mica Majority": {
+						"cost": 0,
+						"fixedxps": [
+							{"BOD": 100},
+							{"RFL": 100},
+							{"EDG": -100},
+							{"Equipped": -25},
+							{"Toughness": 100},
+							{"Wealth": -100},
+							{"Career/Mining": 10},
+							{"Language/Japanese": 10},
+							{"Negotiation": 10},
+							{"Survival/Arctic": 10}
+						]
+					},
+					"Niops Association": {
+						"cost": 0,
+						"fixedxps": [
+							{"INT": 125},
+							{"WIL": -110},
+							{"Equipped": 200},
+							{"Introvert": -125},
+							{"Interest/Any": 10},
+							{"Technician/Any": 15}
+						]
+					},
+					"Rim Collection": {
+						"cost": 0,
+						"fixedxps": [
+							{"CHA": -50},
+							{"EDG": 100},
+							{"Fit": 75},
+							{"Wealth": -50},
+							{"Negotiation": 15},
+							{"Small Arms": 5}
+						],
+						"choices": [
+							{
+								"XPs": 10,
+								"options": [
+									"Animal Handling/Any",
+									"Archery",
+									"Martial Arts",
+									"Melee Weapons",
+									"Martial Arts",
+									"Streetwise/Rim Collection",
+									"Survival/Any"
+								]
+							},
+							{
+								"XPs": 10,
+								"options": [
+									"Animal Handling/Any",
+									"Archery",
+									"Martial Arts",
+									"Melee Weapons",
+									"Martial Arts",
+									"Streetwise/Rim Collection",
+									"Survival/Any"
+								]
+							},
+							{
+								"XPs": 25,
+								"options": [
+									"Any Attribute",
+									"Any Trait"
+								]
+							},
+							{
+								"XPs": 25,
+								"options": [
+									"Any Attribute",
+									"Any Trait"
+								]
+							},
+							{
+								"XPs": 25,
+								"options": [
+									"Any Attribute",
+									"Any Trait"
+								]
+							}
+						]
+					},
+					"None": { }
+				}
+			}	
 		},
 		"Blue Collar": {
 			"stage": 1,
@@ -513,6 +880,33 @@
 				{"Streetwise/Any": 10}
 			]
         	},
+        	"Nobility": {
+			"stage": 1,
+			"cost": 215,
+			"setage": 10,
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"STR": -75},
+				{"BOD": -75},
+				{"RFL": -50},
+				{"INT": 100},
+				{"CHA": 100},
+				{"Equipped": 125},
+				{"Enemy": -200},
+				{"Glass Jaw": -100},
+				{"Reputation": 175},
+				{"Wealth": 150},
+				{"Appraisal": 5},
+				{"Art/Any": 10},
+				{"Interest/Any": 10},
+				{"Language/Affiliation": 10},
+				{"Protocol/Affiliation": 10},
+				{"Any": 5},
+				{"Any": 5},
+				{"Any": 5},
+				{"Any": 5}
+			]
+        	},
 		"Adolescent Warfare": {
 			"stage": 2,
 			"cost": 500,
@@ -543,6 +937,199 @@
 			],
 			"flexiblexps": 130
 		},
+		"High School": {
+			"stage": 2,
+			"cost": 400,
+			"setage": 16,
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"CHA": 25},
+				{"INT": 25},
+				{"Connections": 20},
+				{"Computers": 20},
+				{"Interest/Any": 40},
+				{"Interest/Any": 35},
+				{"Language/Affiliation": 10},
+				{"Streetwise/Affiliation": 20}
+			],
+			"prereq": {
+				"Illiterate": [
+					0,
+					"min"
+				]
+			},
+			"flexiblexps": 185
+		},
+		"Farm": {
+			"stage": 2,
+			"cost": 400,
+			"setage": 16,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"BOD": 40},
+				{"CHA": -20},
+				{"Animal Empathy": 30},
+				{"Administration": 35},
+				{"Animal Handling/Any": 30},
+				{"Career/Agriculture": 50},
+				{"Driving/Ground Vehicle": 30},
+				{"Interest/Any": 40},
+				{"Interest/Any": 20},
+				{"Small Arms": 30}
+			],
+			"flexiblexps": 115
+		},
+		"Mercenary Brat": {
+			"stage": 2,
+			"cost": 600,
+			"setage": 16,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"WIL": 35},
+				{"EDG": 50},
+				{"INT": -20},
+				{"CHA": -20},
+				{"Connections": 40},
+				{"Tech Empathy": 20},
+				{"Career/Soldier": 50},
+				{"Driving/Ground Vehicle": 15},
+				{"Interest/Any": 30},
+				{"Interest/Any": 20},
+				{"Language/Any": 30},
+				{"Language/Any": 20},
+				{"Martial Arts": 30},
+				{"MedTech/General": 10},
+				{"Negotiation": 50},
+				{"Perception": 30},
+				{"Streetwise/Any": 20},
+				{"Tactics/Any": 10},
+				{"Technician/Any": 30}
+			],
+			"flexiblexps": 150
+		},
+		"Military School": {
+			"stage": 2,
+			"cost": 500,
+			"setage": 16,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"CHA": 50},
+				{"Connections": 15},
+				{"Fit": 15},
+				{"Rank": 20},
+				{"Career/Soldier": 25},
+				{"Computers": 35},
+				{"Interest/Any": 30},
+				{"Interest/Military History": 40},
+				{"Leadership": 20},
+				{"Martial Arts": 30},
+				{"MedTech/General": 10},
+				{"Melee Weapons": 20},
+				{"Protocol/Affi liation": 30},
+				{"Running": 30},
+				{"Small Arms": 50},
+				{"Strategy": 10},
+				{"Swimming": 30}
+			],
+			"prereq": {
+				"WIL": [
+					3,
+					"min"
+				]
+			},
+			"flexiblexps": 40
+		},
+		"Preparatory School": {
+			"stage": 2,
+			"cost": 500,
+			"setage": 16,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"CHA": 60},
+				{"Connections": 40},
+				{"Extra Income": 20},
+				{"Gregarious": 20},
+				{"Archery": 20},
+				{"Computers": 25},
+				{"Interest/Any": 30},
+				{"Interest/Any": 20},
+				{"Interest/Any": 20},
+				{"Language/Any": 20},
+				{"MedTech/General": 10},
+				{"Melee Weapons": 15},
+				{"Protocol/Affiliation": 40}
+			],
+			"prereq": {
+				"Illiterate": [
+					0,
+					"min"
+				]
+			},
+			"flexiblexps": 160
+		},
+		"Spacer Family": {
+			"stage": 2,
+			"cost": 490,
+			"setage": 16,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"RFL": 40},
+				{"DEX": 30},
+				{"BOD": -20},
+				{"STR": -20},
+				{"Equipped": 20},
+				{"G-Tolerance": 40},
+				{"Natural Aptitude/Zero-G Operations": 20},
+				{"Introvert": -25},
+				{"Career/Ship's Crew": 30},
+				{"Communications/Conventional EM": 20},
+				{"Computers": 20},
+				{"Gunnery/Spacecraft": 10},
+				{"Interest/Any": 15},
+				{"Language/Any": 15},
+				{"Navigation/Space": 20},
+				{"Perception": 15},
+				{"Piloting/Spacecraft": 15},
+				{"Sensor Operations": 15},
+				{"Technician/Aeronautics": 20},
+				{"Technician/Electronic": 20},
+				{"Zero-G Operations": 15}
+			],
+			"flexiblexps": 175
+		},
+		"Street": {
+			"stage": 2,
+			"cost": 400,
+			"setage": 16,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"BOD": 20},
+				{"EDG": 40},
+				{"CHA": -20},
+				{"Combat Sense": 15},
+				{"Connections": 20},
+				{"Enemy": -20},
+				{"Illiterate": -20},
+				{"Reputation": -20},
+				{"Acting": 20},
+				{"Climbing": 15},
+				{"Disguise": 20},
+				{"Escape Artist": 20},
+				{"Interest/Any": 20},
+				{"Interrogation": 20},
+				{"Martial Arts": 20},
+				{"MedTech/General": 10},
+				{"Melee Weapons": 25},
+				{"Negotiation": 20},
+				{"Perception": 25},
+				{"Running": 25},
+				{"Streetwise/Affiliation": 10},
+				{"Small Arms": 20},
+				{"Stealth": 15},
+				{"Streetwise/Affiliation": 40}
+			],
+			"flexiblexps": 60
+		},
 		"Technical College": {
 			"stage": 3,
 			"cost": 600,
@@ -559,6 +1146,26 @@
 					"Communications": {
 						"agedelta": 1,
 						"field": "Communications"
+					},
+					"Pilot/Aerospace (Civilian)": {
+						"agedelta": 1,
+						"field": "Pilot/Aerospace (Civilian)"
+					},
+					"Pilot/Aircraft (Civilian)": {
+						"agedelta": 1,
+						"field": "Pilot/Aircraft (Civilian)"
+					},
+					"Pilot/DropShip": {
+						"agedelta": 1,
+						"field": "Pilot/DropShip"
+					},
+					"Pilot/Exoskeleton": {
+						"agedelta": 1,
+						"field": "Pilot/Exoskeleton"
+					},
+					"Technician/Civilian": {
+						"agedelta": 1,
+						"field": "Technician/Civilian"
 					}
 				}
 			},
@@ -567,7 +1174,35 @@
 					"Cartographer": {
 						"agedelta": 2,
 						"field": "Cartographer"
-					}
+					},
+					"Engineer": {
+						"agedelta": 2,
+						"field": "Engineer"
+					},
+					"Merchant Marine": {
+						"agedelta": 2,
+						"field": "Merchant Marine"
+					},
+					"Pilot/IndustrialMech": {
+						"agedelta": 2,
+						"field": "Pilot/IndustrialMech"
+					},
+					"Pilot/JumpShip": {
+						"agedelta": 2,
+						"field": "Pilot/JumpShip"
+					},
+					"Technician/Aerospace": {
+						"agedelta": 2,
+						"field": "Technician/Aerospace"
+					},
+					"Technician/'Mech": {
+						"agedelta": 2,
+						"field": "Technician/'Mech"
+					},
+					"Technician/Vehicle": {
+						"agedelta": 2,
+						"field": "Technician/Vehicle"
+					}					
 				}
 			},
 			"substage3": {
@@ -576,10 +1211,458 @@
 					"Cartographer": {
 						"agedelta": 2,
 						"field": "Cartographer"
+					},
+					"Engineer": {
+						"agedelta": 2,
+						"field": "Engineer"
+					},
+					"Merchant Marine": {
+						"agedelta": 2,
+						"field": "Merchant Marine"
+					},
+					"Pilot/IndustrialMech": {
+						"agedelta": 2,
+						"field": "Pilot/IndustrialMech"
+					},
+					"Pilot/JumpShip": {
+						"agedelta": 2,
+						"field": "Pilot/JumpShip"
+					},
+					"Technician/Aerospace": {
+						"agedelta": 2,
+						"field": "Technician/Aerospace"
+					},
+					"Technician/'Mech": {
+						"agedelta": 2,
+						"field": "Technician/'Mech"
+					},
+					"Technician/Vehicle": {
+						"agedelta": 2,
+						"field": "Technician/Vehicle"
 					}
 				}
 			},
 			"flexiblexps": 200
+		},
+		"Trade School": {
+			"stage": 3,
+			"cost": 560,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"INT": 50},
+				{"Any Attribute": 100},
+				{"Connections": 50},
+				{"Equipped": 100}
+			],
+			"substage1": {
+				"options": {
+					"General Studies": {
+						"agedelta": 1,
+						"field": "General Studies"
+					},
+					"Merchant": {
+						"agedelta": 1,
+						"field": "Merchant"
+					}
+				}
+			},
+			"substage2": {
+				"options": {
+					"Analysis": {
+						"agedelta": 2,
+						"field": "Analysis"
+					},
+					"Anthropologist": {
+						"agedelta": 2,
+						"field": "Anthropologist"
+					},
+					"Archaeologist": {
+						"agedelta": 2,
+						"field": "Archaeologist"
+					},
+					"Cartographer": {
+						"agedelta": 2,
+						"field": "Cartographer"
+					},
+					"Communications": {
+						"agedelta": 2,
+						"field": "Communications"
+					},
+					"HPG Technician": {
+						"agedelta": 2,
+						"field": "HPG Technician"
+					},
+					"Journalist": {
+						"agedelta": 2,
+						"field": "Journalist"
+					},
+					"Manager": {
+						"agedelta": 2,
+						"field": "Manager"
+					},
+					"Medical Assistant": {
+						"agedelta": 2,
+						"field": "Medical Assistant"
+					},
+					"Merchant Marine": {
+						"agedelta": 2,
+						"field": "Merchant Marine"
+					}									
+				}
+			},
+			"substage3": {
+				"options": {
+					"None": {},
+					"Analysis": {
+						"agedelta": 2,
+						"field": "Analysis"
+					},
+					"Anthropologist": {
+						"agedelta": 2,
+						"field": "Anthropologist"
+					},
+					"Archaeologist": {
+						"agedelta": 2,
+						"field": "Archaeologist"
+					},
+					"Cartographer": {
+						"agedelta": 2,
+						"field": "Cartographer"
+					},
+					"Communications": {
+						"agedelta": 2,
+						"field": "Communications"
+					},
+					"HPG Technician": {
+						"agedelta": 2,
+						"field": "HPG Technician"
+					},
+					"Journalist": {
+						"agedelta": 2,
+						"field": "Journalist"
+					},
+					"Manager": {
+						"agedelta": 2,
+						"field": "Manager"
+					},
+					"Medical Assistant": {
+						"agedelta": 2,
+						"field": "Medical Assistant"
+					},
+					"Merchant Marine": {
+						"agedelta": 2,
+						"field": "Merchant Marine"
+					}
+				}
+			},
+			"flexiblexps": 200
+		},
+		"Military Academy (Prep School or Military School)": {
+			"stage": 3,
+			"cost": 830,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"STR": 50},
+				{"BOD": 100},
+				{"RFL": 125},
+				{"WIL": 100},
+				{"Equipped": 100},
+				{"Rank": 200},
+				{"Interest/Military History": 15},
+				{"Leadership": 10},
+				{"Protocol/Affiliation": 15},
+				{"Swimming": 15}
+			],
+			"substage1": {
+				"options": {
+					"Basic Training": {
+						"agedelta": 1,
+						"field": "Basic Training"
+					},
+					"Basic Training (Naval)": {
+						"agedelta": 1,
+						"field": "Basic Training (Naval)"
+					}
+				}
+			},
+			"substage2": {
+				"options": {
+					"Analysis": {
+						"agedelta": 1,
+						"field": "Analysis"
+					},
+					"Cavalry": {
+						"agedelta": 1,
+						"field": "Cavalry"
+					},
+					"Infantry": {
+						"agedelta": 1,
+						"field": "Infantry"
+					},
+					"Marine": {
+						"agedelta": 1,
+						"field": "Marine"
+					},
+					"MechWarrior": {
+						"agedelta": 1,
+						"field": "MechWarrior"
+					},
+					"Pilot/Aerospace (Combat)": {
+						"agedelta": 1,
+						"field": "Pilot/Aerospace (Combat)"
+					},
+					"Pilot/Aircraft (Combat)": {
+						"agedelta": 1,
+						"field": "Pilot/Aircraft (Combat)"
+					},
+					"Pilot/DropShip": {
+						"agedelta": 1,
+						"field": "Pilot/DropShip"
+					},
+					"Scientist": {
+						"agedelta": 1,
+						"field": "Scientist"
+					},
+					"Scout": {
+						"agedelta": 1,
+						"field": "Scout"
+					},
+					"Ship's Crew": {
+						"agedelta": 1,
+						"field": "Ship's Crew"
+					}									
+				}
+			},
+			"substage3": {
+				"options": {
+					"None": {},
+					"Analysis": {
+						"agedelta": 1,
+						"field": "Analysis"
+					},
+					"Cavalry": {
+						"agedelta": 1,
+						"field": "Cavalry"
+					},
+					"Infantry": {
+						"agedelta": 1,
+						"field": "Infantry"
+					},
+					"Marine": {
+						"agedelta": 1,
+						"field": "Marine"
+					},
+					"MechWarrior": {
+						"agedelta": 1,
+						"field": "MechWarrior"
+					},
+					"Pilot/Aerospace (Combat)": {
+						"agedelta": 1,
+						"field": "Pilot/Aerospace (Combat)"
+					},
+					"Pilot/Aircraft (Combat)": {
+						"agedelta": 1,
+						"field": "Pilot/Aircraft (Combat)"
+					},
+					"Pilot/DropShip": {
+						"agedelta": 1,
+						"field": "Pilot/DropShip"
+					},
+					"Scientist": {
+						"agedelta": 1,
+						"field": "Scientist"
+					},
+					"Scout": {
+						"agedelta": 1,
+						"field": "Scout"
+					},
+					"Ship's Crew": {
+						"agedelta": 1,
+						"field": "Ship's Crew"
+					},
+					"Doctor": {
+						"agedelta": 2,
+						"field": "Doctor"
+					},
+					"Infantry/Anti-'Mech": {
+						"agedelta": 2,
+						"field": "Infantry/Anti-'Mech"
+					},
+					"Military Scientist": {
+						"agedelta": 2,
+						"field": "Military Scientist"
+					},
+					"Pilot/Battle Armor": {
+						"agedelta": 2,
+						"field": "Pilot/Battle Armor"
+					},
+					"Pilot/JumpShip": {
+						"agedelta": 2,
+						"field": "Pilot/JumpShip"
+					},
+					"Special Forces": {
+						"agedelta": 2,
+						"field": "Special Forces"
+					}
+				}
+			},
+			"flexiblexps": 100
+		},
+		"Military Academy (No Prep School or Military School)": {
+			"stage": 3,
+			"cost": 830,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"STR": 50},
+				{"BOD": 100},
+				{"RFL": 125},
+				{"WIL": 100},
+				{"Equipped": 100},
+				{"Rank": 200},
+				{"Interest/Military History": 15},
+				{"Leadership": 10},
+				{"Protocol/Affiliation": 15},
+				{"Swimming": 15},
+				{"WIL": 100},
+				{"EDG": -100},
+				{"Connections": 200},
+				{"Reputation": -100},
+				{"Wealth": -100}
+			],
+			"substage1": {
+				"options": {
+					"Basic Training": {
+						"agedelta": 1,
+						"field": "Basic Training"
+					},
+					"Basic Training (Naval)": {
+						"agedelta": 1,
+						"field": "Basic Training (Naval)"
+					}
+				}
+			},
+			"substage2": {
+				"options": {
+					"Analysis": {
+						"agedelta": 1,
+						"field": "Analysis"
+					},
+					"Cavalry": {
+						"agedelta": 1,
+						"field": "Cavalry"
+					},
+					"Infantry": {
+						"agedelta": 1,
+						"field": "Infantry"
+					},
+					"Marine": {
+						"agedelta": 1,
+						"field": "Marine"
+					},
+					"MechWarrior": {
+						"agedelta": 1,
+						"field": "MechWarrior"
+					},
+					"Pilot/Aerospace (Combat)": {
+						"agedelta": 1,
+						"field": "Pilot/Aerospace (Combat)"
+					},
+					"Pilot/Aircraft (Combat)": {
+						"agedelta": 1,
+						"field": "Pilot/Aircraft (Combat)"
+					},
+					"Pilot/DropShip": {
+						"agedelta": 1,
+						"field": "Pilot/DropShip"
+					},
+					"Scientist": {
+						"agedelta": 1,
+						"field": "Scientist"
+					},
+					"Scout": {
+						"agedelta": 1,
+						"field": "Scout"
+					},
+					"Ship's Crew": {
+						"agedelta": 1,
+						"field": "Ship's Crew"
+					}									
+				}
+			},
+			"substage3": {
+				"options": {
+					"None": {},
+					"Analysis": {
+						"agedelta": 1,
+						"field": "Analysis"
+					},
+					"Cavalry": {
+						"agedelta": 1,
+						"field": "Cavalry"
+					},
+					"Infantry": {
+						"agedelta": 1,
+						"field": "Infantry"
+					},
+					"Marine": {
+						"agedelta": 1,
+						"field": "Marine"
+					},
+					"MechWarrior": {
+						"agedelta": 1,
+						"field": "MechWarrior"
+					},
+					"Pilot/Aerospace (Combat)": {
+						"agedelta": 1,
+						"field": "Pilot/Aerospace (Combat)"
+					},
+					"Pilot/Aircraft (Combat)": {
+						"agedelta": 1,
+						"field": "Pilot/Aircraft (Combat)"
+					},
+					"Pilot/DropShip": {
+						"agedelta": 1,
+						"field": "Pilot/DropShip"
+					},
+					"Scientist": {
+						"agedelta": 1,
+						"field": "Scientist"
+					},
+					"Scout": {
+						"agedelta": 1,
+						"field": "Scout"
+					},
+					"Ship's Crew": {
+						"agedelta": 1,
+						"field": "Ship's Crew"
+					},
+					"Doctor": {
+						"agedelta": 2,
+						"field": "Doctor"
+					},
+					"Infantry/Anti-'Mech": {
+						"agedelta": 2,
+						"field": "Infantry/Anti-'Mech"
+					},
+					"Military Scientist": {
+						"agedelta": 2,
+						"field": "Military Scientist"
+					},
+					"Pilot/Battle Armor": {
+						"agedelta": 2,
+						"field": "Pilot/Battle Armor"
+					},
+					"Pilot/JumpShip": {
+						"agedelta": 2,
+						"field": "Pilot/JumpShip"
+					},
+					"Special Forces": {
+						"agedelta": 2,
+						"field": "Special Forces"
+					}
+				}
+			},
+			"flexiblexps": 100
 		},
 		"Civilian Job": {
 			"stage": 4,
@@ -598,6 +1681,232 @@
 				{"Protocol/Affiliation": 50}
 			],
 			"flexiblexps": 165
+		},
+		"Explorer (Inner Sphere)": {
+			"stage": 4,
+			"cost": 900,
+			"agedelta": 6,
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"BOD": 20},
+				{"RFL": 30},
+				{"INT": 30},
+				{"WIL": 30},
+				{"G-Tolerance": 50},
+				{"Good Hearing": 35},
+				{"Vehicle": 35},
+				{"Introvert": -40},
+				{"Wealth": -50},
+				{"Appraisal": 35},
+				{"Climbing": 25},
+				{"Communications/Any": 35},
+				{"Computers": 20},
+				{"Investigation": 35},
+				{"Language/Affi liation": 25},
+				{"Language/Any": 40},
+				{"Martial Arts": 25},
+				{"Melee Weapons": 30},
+				{"MedTech/General": 15},
+				{"Navigation/Any": 50},
+				{"Piloting/Any": 50},
+				{"Sensor Operations": 55},
+				{"Survival/Any": 75},
+				{"Streetwise/Any": 35},
+				{"Tracking/Any": 25},
+				{"Zero-G Operations": 15}
+			],
+			"prereq": {
+				"TDS": [
+					0,
+					"min"
+				],
+				"Connections": [
+					1.5,
+					"min"
+				]
+			},
+			"flexiblexps": 170
+		},
+		"Explorer (Periphery)": {
+			"stage": 4,
+			"cost": 900,
+			"agedelta": 6,
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"BOD": 20},
+				{"RFL": 30},
+				{"INT": 30},
+				{"WIL": 30},
+				{"G-Tolerance": 50},
+				{"Good Hearing": 35},
+				{"Vehicle": 35},
+				{"Introvert": -40},
+				{"Wealth": -50},
+				{"Appraisal": 35},
+				{"Climbing": 25},
+				{"Communications/Any": 35},
+				{"Computers": 20},
+				{"Investigation": 35},
+				{"Language/Affi liation": 25},
+				{"Language/Any": 40},
+				{"Martial Arts": 25},
+				{"Melee Weapons": 30},
+				{"MedTech/General": 15},
+				{"Navigation/Any": 50},
+				{"Piloting/Any": 50},
+				{"Sensor Operations": 55},
+				{"Survival/Any": 75},
+				{"Streetwise/Any": 35},
+				{"Tracking/Any": 25},
+				{"Zero-G Operations": 15}
+			],
+			"prereq": {
+				"TDS": [
+					0,
+					"min"
+				]
+			},
+			"flexiblexps": 170
+		},
+		"Agitator": {
+			"stage": 4,
+			"cost": 900,
+			"agedelta": 4,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"WIL": 75},
+				{"Bloodmark": -50},
+				{"Gregarious": 80},
+				{"Toughness": 80},
+				{"Reputation": -150},
+				{"Acting": 50},
+				{"Disguise": 75},
+				{"Driving/Any": 65},
+				{"Leadership": 60},
+				{"Negotiation": 80},
+				{"Perception": 70},
+				{"Prestidigitation": 100},
+				{"Small Arms": 75},
+				{"Streetwise/Affiliation": 75},
+				{"Tactics/Infantry": 40},
+				{"Training": 50}
+			],
+			"flexiblexps": 125
+		},
+		"Organized Crime": {
+			"stage": 4,
+			"cost": 1000,
+			"agedelta": 5,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"EDG": 85},
+				{"Alternate ID": 100},
+				{"In For Life": -150},
+				{"Acting": 60},
+				{"Career/Syndicate": 100},
+				{"Computers": 15},
+				{"Demolitions": 50},
+				{"Driving/Any": 30},
+				{"Escape Artist": 35},
+				{"Forgery": 35},
+				{"Interest/Any Sport": 55},
+				{"Interrogation": 85},
+				{"Language/Syndicate": 50},
+				{"Leadership": 25},
+				{"Martial Arts": 30},
+				{"Melee Weapons": 45},
+				{"Negotiation": 35},
+				{"Perception": 35},
+				{"Prestidigitation": 35},
+				{"Protocol/Affiliation": 25},
+				{"Security Systems": 45},
+				{"Small Arms": 75},
+				{"Stealth": 35},
+				{"Streetwise/Affiliation": 50}
+			],
+			"choices": [
+				{
+					"XPs": -85,
+					"options": [
+						"Dark Secret",
+						"Compulsion/Loyalty to Crime Boss"
+					]
+				}
+			],
+			"flexiblexps": 100
+		},
+		"Tour Of Duty (Inner Sphere)": {
+			"stage": 4,
+			"cost": 600,
+			"agedelta": 6,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"Administration": 75}, 
+				{"Career/Any Non-Military": 40},
+				{"Computers": 40},
+				{"Driving/Any": 60},
+				{"Interest/Any": 50},
+				{"Interest/Any": 50},
+				{"Leadership": 40},
+				{"Negotiation": 30},
+				{"Protocol/Affiliation": 50}
+			],
+			"flexiblexps": 165
+		},
+		"Covert Operations (Lyran)": {
+			"stage": 4,
+			"cost": 1000,
+			"agedelta": 6,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"WIL": 30},
+				{"Connections": 85},
+				{"Enemy": -45},
+				{"Introvert": -85},
+				{"Property": 25},
+				{"Rank": 85},
+				{"Reputation": -20},
+				{"Acting": 30},
+				{"Computers": 50},
+				{"Cryptography": 35},
+				{"Driving/Any": 35},
+				{"Forgery": 20},
+				{"Investigation": 50},
+				{"Martial Arts": 40},
+				{"Negotiation": 50},
+				{"Strategy": 25},
+				{"Support Weapons": 25},
+				{"Tactics/Any": 25},
+				{"Training": 40}
+			]
+		},
+		"Covert Operations (Independent)": {
+			"stage": 4,
+			"cost": 1000,
+			"agedelta": 6,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"RFL": 75},
+				{"CHA": -50},
+				{"Bloodmark": -50},
+				{"Connections": 75},
+				{"Extra Income": 25},
+				{"Reputation": -75},
+				{"Wealth": -50},
+				{"Acting": 50},
+				{"Climbing": 35},
+				{"Cryptography": 40},
+				{"Escape Artist": 75},
+				{"Interest/Any": 50},
+				{"Language/Any": 75},
+				{"Martial Arts": 35},
+				{"Navigation/Any": 25},
+				{"Protocol/Any": 45},
+				{"Science/Chemistry": 25},
+				{"Small Arms": 25},
+				{"Streetwise/Any": 35},
+				{"Tactics/Any": 35}
+			]
 		}
 	},
 	"macros": {
@@ -635,11 +1944,713 @@
 						"min"
 					]
 				}
-			}
+			},
+			"General Studies": {
+				"fixedxps": [
+					{"Career/Any": 30},
+					{"Computers": 30},
+					{"Interest/Any": 30},
+					{"Navigation/Ground": 30},
+					{"Perception": 30},
+					{"Protocol/Affiliation": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Merchant": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Appraisal": 30},
+					{"Career/Merchant": 30},
+					{"Negotiation": 30},
+					{"Protocol/Any": 30},
+					{"Streetwise/Any": 30}
+				],
+				"prereq": {
+					"CHA": [
+						3,
+						"min"
+					],
+					"WIL": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Analysis": {
+				"fixedxps": [
+					{"Computers": 30},
+					{"Investigation": 30},
+					{"Language/Any": 30},
+					{"Language/Any": 30},
+					{"Sensor Operations": 30},
+					{"Strategy": 30},
+					{"Tactics/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"HPG Technician": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Communications/Conventional EM": 30},
+					{"Communications/Hyperpulse Generator": 30},
+					{"Computers": 30},
+					{"Cryptography": 30}
+				]
+			},
+			"Journalist": {
+				"fixedxps": [
+					{"Acting": 30},
+					{"Art/Writing": 30},
+					{"Career/Journalist": 30},
+					{"Computers": 30},
+					{"Investigation": 30},
+					{"Perception": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					],
+					"CHA": [
+						4,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]					
+				}
+			},
+			"Manager": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Career/Management": 30},
+					{"Leadership": 30},
+					{"Negotiation": 30},
+					{"Protocol/Affiliation": 30},
+					{"Training": 30}
+				],
+				"prereq": {
+					"": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Medical Assistant": {
+				"fixedxps": [
+					{"Career/MedTech": 30},
+					{"Computers": 30},
+					{"Interest/Pharmacology": 30},
+					{"MedTech/General": 30},
+					{"Perception": 30}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					],
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Merchant Marine": {
+				"fixedxps": [
+					{"Career/Merchant Marine": 30},
+					{"Protocol/Any": 30},
+					{"Technician/Aeronautics": 30},
+					{"Technician/Any": 30},
+					{"Zero-G Operations": 30}
+				],
+				"prereq": {
+					"RFL": [
+						3,
+						"min"
+					],
+					"TDS": [
+						0,
+						"min"
+					]					
+				}
+			},
+			"Anthropologist": {
+				"fixedxps": [
+					{"Career/Anthropologist": 30},
+					{"Interest/History (Any one culture)": 30},
+					{"Investigation": 30},
+					{"Language/Any": 30},
+					{"Language/Any": 30},
+					{"Protocol/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Archaeologist": {
+				"fixedxps": [
+					{"Career/Archaeologist": 30},
+					{"Appraisal": 30},
+					{"Interest/Geology": 30},
+					{"Interest/History (any)": 30},
+					{"Navigation/Ground": 30},
+					{"Perception": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},		
+			"Pilot/Aerospace (Civilian)": {
+				"fixedxps": [
+					{"Career/Aerospace Pilot": 30},
+					{"Communications/Conventional EM": 30},
+					{"Navigation/Air": 30},
+					{"Navigation/Space": 30},
+					{"Piloting/Aerospace": 30},
+					{"Sensor Operations": 30}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					],
+					"RFL": [
+						4,
+						"min"
+					],
+					"INT": [
+						3,
+						"min"
+					]					
+				}
+			},		
+			"Pilot/Aircraft (Civilian)": {
+				"fixedxps": [
+					{"Career/Aircraft Pilot": 30},
+					{"Communications/Conventional EM": 30},
+					{"Navigation/Air": 30},
+					{"Sensor Operations": 30},
+					{"Piloting/Air Vehicle": 30}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					],
+					"RFL": [
+						3,
+						"min"
+					]					
+				}
+			},		
+			"Pilot/DropShip": {
+				"fixedxps": [
+					{"Career/DropShip Pilot": 30},
+					{"Communications/Conventional EM": 30},
+					{"Navigation/Space": 30},
+					{"Piloting/Spacecraft": 30},
+					{"Sensor Operations": 30},
+					{"Zero-G Operations": 30}
+				],
+				"prereq": {
+					"DEX": [
+						4,
+						"min"
+					],
+					"INT": [
+						3,
+						"min"
+					],
+					"WIL": [
+						3,
+						"min"
+					],
+					"TDS": [
+						0,
+						"min"
+					]
+				}
+			},		
+			"Technician/Civilian": {
+				"fixedxps": [
+					{"Appraisal": 30},
+					{"Career/Technician": 30},
+					{"Technician/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Nuclear": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					],
+					"DEX": [
+						3,
+						"min"
+					]
+				}
+			},		
+			"Pilot/Exoskeleton": {
+				"fixedxps": [
+					{"Piloting/Battlesuit": 30},
+					{"Sensor Operations": 30},
+					{"Technician/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Myomer": 30}
+				],
+				"prereq": {
+					"STR": [
+						5,
+						"min"
+					],
+					"BOD": [
+						5,
+						"min"
+					]
+				}
+			},		
+			"Engineer": {
+				"fixedxps": [
+					{"Appraisal": 30},
+					{"Career/Engineer": 30},
+					{"Perception": 30},
+					{"Technician/Nuclear": 30},
+					{"Technician/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},		
+			"Pilot/IndustrialMech": {
+				"fixedxps": [
+					{"Piloting/'Mech": 30},
+					{"Sensor Operations": 30},
+					{"Technician/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Myomer": 30}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					],
+					"RFL": [
+						3,
+						"min"
+					]
+				}
+			},		
+			"Technician/Aerospace": {
+				"fixedxps": [
+					{"Computers": 30},
+					{"Technician/Aeronautics": 30},
+					{"Technician/Nuclear": 30},
+					{"Technician/Jets": 30},
+					{"Zero-G Operations": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},		
+			"Pilot/JumpShip": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Computers": 30},
+					{"Navigation/K-F Jump": 30},
+					{"Navigation/Space": 30}
+				],
+				"prereq": {
+					"INT": [
+						5,
+						"min"
+					],
+					"TDS": [
+						0,
+						"min"
+					]
+				}
+			},		
+			"Technician/'Mech": {
+				"fixedxps": [
+					{"Technician/Electronic": 30},
+					{"Technician/Jets": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Myomer": 30},
+					{"Technician/Nuclear": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},		
+			"Technician/Vehicle": {
+				"fixedxps": [
+					{"Computers": 30},
+					{"Technician/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Nuclear": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Basic Training": {
+				"fixedxps": [
+					{"Career/Soldier": 30},
+					{"Martial Arts": 30},
+					{"MedTech/General": 30},
+					{"Navigation/Ground": 30},
+					{"Small Arms": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					],
+					"WIL": [
+						3,
+						"min"
+					],
+					"Rank": [
+						1,
+						"min"
+					]					
+				}
+			},
+			"Basic Training (Naval)": {
+				"fixedxps": [
+					{"Martial Arts": 30},
+					{"MedTech/General": 30},
+					{"Navigation/Space": 30},
+					{"Small Arms": 30},
+					{"Zero-G Operations": 30}
+				],
+				"choices": [
+					{
+						"XPs": 30,
+						"options": [
+							"Career/Pilot",
+							"Career/Ship's Crew"
+						]
+					}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					],
+					"RFL": [
+						3,
+						"min"
+					],
+					"TDS": [
+						0,
+						"min"
+					],
+					"Rank": [
+						1,
+						"min"
+					]					
+				}
+			},
+			"Cavalry": {
+				"fixedxps": [
+					{"Artillery": 30},
+					{"Driving/Any": 30},
+					{"Gunnery/Any Vehicle": 30},
+					{"Sensor Operations": 30},
+					{"Technician/Mechanical": 30}
+				],
+				"choices": [
+					{
+						"XPs": 30,
+						"options": [
+							"Tactics/Sea",
+							"Tactics/Land"
+						]
+					}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Infantry": {
+				"fixedxps": [
+					{"Acrobatics/Free-Fall": 30},
+					{"Artillery": 30},
+					{"Climbing": 30},
+					{"Communications/Conventional": 30},
+					{"Support Weapons": 30},
+					{"Tactics/Infantry": 30}
+				]
+			},
+			"Marine": {
+				"fixedxps": [
+					{"Acrobatics/Free-Fall": 30},
+					{"Demolitions": 30},
+					{"Gunnery/Spacecraft": 30},
+					{"Security Systems/Any": 30},
+					{"Zero-G Operations": 30}
+				]
+			},
+			"MechWarrior": {
+				"fixedxps": [
+					{"Gunnery/'Mech": 30},
+					{"Piloting/'Mech": 30},
+					{"Sensor Operations": 30},
+					{"Tactics/Land": 30},
+					{"Technician/Any": 30}
+				],
+				"prereq": {
+					"DEX": [
+						4,
+						"min"
+					],
+					"RFL": [
+						4,
+						"min"
+					]					
+				}
+			},
+			"Pilot/Aerospace (Combat)": {
+				"fixedxps": [
+					{"Gunnery/Aerospace": 30},
+					{"Navigation/Air": 30},
+					{"Navigation/Space": 30},
+					{"Piloting/Aerospace": 30},
+					{"Sensor Operations": 30},
+					{"Tactics/Space": 30},
+					{"Zero-G Operations": 30}
+				],
+				"prereq": {
+					"DEX": [
+						4,
+						"min"
+					],
+					"RFL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Pilot/Aircraft (Combat)": {
+				"fixedxps": [
+					{"Gunnery/Air Vehicle": 30},
+					{"Navigation/Air": 30},
+					{"Piloting/Air Vehicle": 30},
+					{"Sensor Operations": 30},
+					{"Tactics/Air": 30}
+				],
+				"prereq": {
+					"DEX": [
+						4,
+						"min"
+					],
+					"RFL": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Scientist": {
+				"fixedxps": [
+					{"Career/Scientist": 30},
+					{"Computers": 30},
+					{"Interest/Any": 30},
+					{"Investigation": 30},
+					{"Perception": 30},
+					{"Science/Any": 30},
+					{"Training": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Scout": {
+				"fixedxps": [
+					{"Communications/Conventional EM": 30},
+					{"Disguise": 30},
+					{"Language/Any": 30},
+					{"Security Systems/Any": 30},
+					{"Stealth": 30},
+					{"Streetwise/Any": 30},
+					{"Tracking/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					],
+					"WIL": [
+						3,
+						"min"
+					],
+					"Illiterate": [
+						0,
+						"min"
+					]
+				}
+			},
+			"Ship's Crew": {
+				"fixedxps": [
+					{"Career/Ship's Crew": 30},
+					{"Computers": 30},
+					{"Gunnery/Spacecraft": 30},
+					{"Technician/Any": 30},
+					{"Zero-G Operations": 30}
+				],
+				"prereq": {
+					"RFL": [
+						3,
+						"min"
+					],
+					"TDS": [
+						0,
+						"min"
+					]					
+				}
+			},
+			"Doctor": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Career/Doctor": 30},
+					{"MedTech/General": 30},
+					{"Protocol/Affiliation": 30},
+					{"Surgery/Any": 30}
+				],
+				"prereq": {
+					"DEX": [
+						4,
+						"min"
+					],
+					"INT": [
+						5,
+						"min"
+					],
+					"WIL": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Infantry/Anti-'Mech": {
+				"fixedxps": [
+					{"Acrobatics/Gymnastics": 30},
+					{"Demolitions": 30},
+					{"Perception": 30},
+					{"Security Systems/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Myomer": 30}
+				],
+				"prereq": {
+					"WIL": [
+						5,
+						"min"
+					]
+				}
+			},
+			"Military Scientist": {
+				"fixedxps": [
+					{"Career/Military Scientist": 30},
+					{"Computers": 30},
+					{"Cryptography": 30},
+					{"Interest/Military History": 30},
+					{"Strategy": 30},
+					{"Tactics/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						5,
+						"min"
+					]
+				}
+			},
+			"Pilot/Battle Armor": {
+				"fixedxps": [
+					{"Climbing": 30},
+					{"Gunnery/Battlesuit": 30},
+					{"Martial Arts": 30},
+					{"Piloting/Battlesuit": 30},
+					{"Sensor Operations": 30},
+					{"Tactics/Land": 30}
+				],
+				"prereq": {
+					"STR": [
+						6,
+						"min"
+					],
+					"BOD": [
+						5,
+						"min"
+					]
+				}
+			},
+			"Special Forces": {
+				"fixedxps": [
+					{"Acrobatics/Free-Fall": 30},
+					{"Demolitions": 30},
+					{"Small Arms": 30},
+					{"Stealth": 30},
+					{"Survival/Any": 30},
+					{"Tracking/Any": 30}
+				],
+				"prereq": {
+					"BOD": [
+						4,
+						"min"
+					],
+					"RFL": [
+						4,
+						"min"
+					],
+					"WIL": [
+						5,
+						"min"
+					]
+				}
+			}					
 		},
 		"Career/Any Non-Military": [
 			"Career/Mining",
-			"Career/Ship’s Crew",
+			"Career/Ship's Crew",
 			"Career/Agriculture",
 			"Career/Journalist",
 			"Career/Merchant",
@@ -653,7 +2664,7 @@
 			"Career/Engineer",
 			"Career/Lawyer",
 			"Career/Management",
-			"Career/Medtech",
+			"Career/MedTech",
 			"Career/Merchant Marine",
 			"Career/Aerospace Pilot",
 			"Career/Aircraft Pilot",
@@ -661,7 +2672,9 @@
 			"Career/Technician",
 			"Career/Detective",
 			"Career/Police",
-			"Career/Pilot"
+			"Career/Pilot",
+			"Career/Accountant",
+			"Career/Cook"
 		],
 		"Language": {
 			"Capellan": {
@@ -722,13 +2735,13 @@
 					"Language/German"
 				]
 			},
-			"Minor Periphery": {
+			"Periphery": {
 				"primary": "Language/English",
 				"secondary": [
 					"Language/Any"
 				]
 			},
-			"Major Periphery": {
+			"Rim Collection": {
 				"primary": "Language/English"
 			},
 			"Invading Clan": {

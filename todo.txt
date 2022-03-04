@@ -10,5 +10,20 @@ X add xp and age to label in wizard
 X add age to xp label in load
 
 filter lifemodules based on stage and other prerequisites
-	add clan vs not clan tag
+	X add clan vs not clan tag
 	
+
+Add limited flex xp
+
+Add additive prereqs e.g. Minimum Zero-G Operations Skill +2
+
+Allow prereqs to be modified if other conditions are met
+
+Allow checking of proper field requirement
+
+Allow fill-in for e.g. Enemy
+
+tour of duty
+organized crime
+
+add tagging system

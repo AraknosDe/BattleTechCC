@@ -438,7 +438,7 @@ class CharCreator(Frame):
             self.nextstageoptions = [self.stage+1]
 
         if len(self.nextstageoptions) > 1 or self.stage == 4:
-            idx = stageselectdialog.askstageselect(["Stage " + str(stageidx) for stageidx in self.nextstageoptions])
+            idx = stageselectdialog.askstageselect(["Stage " + str(stageidx) for stageidx in self.nextstageoptions], self.master)
             if idx == None:
                 return
             self.stage = self.nextstageoptions[idx]
