@@ -1,6 +1,8 @@
 import database
 
 skillleveltable = [20, 30, 50, 80, 120, 170, 230, 300, 380, 470, 570]
+skillleveltablefast = [18, 27, 45, 72, 108, 153, 207, 270, 342, 423, 513]
+skillleveltableslow = [22, 33, 55, 88, 132, 187, 253, 330, 418, 517, 627]
 
 class Character:
     def __init__(self, name='New Character', maxxp=5000):
@@ -97,7 +99,13 @@ class Character:
         return [(p.getSAT(), p.getlevel(), p.getminmax()) for p in self.prerequisites]
 
     def getskilllevel(self, xp):
-        for level, thresh in enumerate(skillleveltable):
+        if 'Fast Learner' in self.traits.keys() and self.getATlevel(self.traits['Fast Learner']) >= 3:
+            tabletouse = skillleveltablefast
+        elif 'Slow Learner' in self.traits.keys() and self.getATlevel(self.traits['Slow Learner']) <= -3:
+            tabletouse = skillleveltableslow
+        else:
+            tabletouse = skillleveltable
+        for level, thresh in enumerate(tabletouse):
             if xp < thresh:
                 return level-1
         return 10
