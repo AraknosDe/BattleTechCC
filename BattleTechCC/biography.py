@@ -141,7 +141,7 @@ class Biography:
         char.age = lifemodule.getnewage(char.age)
 
         char.spentxp += lifemodule.cost
-        char.prerequisites += lifemodule.prereq
+        char.applyprerequisites(lifemodule.prereq)
 
         char.maxxp += lifemodule.rebate
 
@@ -334,6 +334,22 @@ class Prerequisite:
             return level >= self.level
         else:
             return level <= self.level
+
+    def __repr__(self):
+        return "Prerequisite(SAT=%r, level=%r, minmax=%r)"\
+               % (self.SAT, self.level, self.minmax)
+
+    def __str__(self):
+        return "Prerequisite(%s %s %r)" \
+               % (self.SAT, '>=' if self.minmax == min else '<=', self.level)
+
+    def __hash__(self):
+        return hash((self.minmax, self.SAT, self.level))
+
+    def __eq__(self, other):
+        if type(other) == type(self):
+            return self.minmax == other.minmax and self.SAT == other.SAT and self.level == other.level
+        return False
 
 class SaveBlob():
 

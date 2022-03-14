@@ -178,6 +178,8 @@ def parsefieldmacro(curlm, field):
     else:
         curlm.stage = fieldlm.stage
 
+    curlm.prereq += fieldlm.prereq
+
 def parseANYmacro(SAT, xps, anyprereq=[]):
     choice = []
     if SAT == "Any":

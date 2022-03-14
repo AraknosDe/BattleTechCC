@@ -1,4 +1,5 @@
 import database
+from math import floor
 
 skillleveltable = [20, 30, 50, 80, 120, 170, 230, 300, 380, 470, 570]
 skillleveltablefast = [18, 27, 45, 72, 108, 153, 207, 270, 342, 423, 513]
@@ -98,18 +99,52 @@ class Character:
     def getprereqtuples(self):
         return [(p.getSAT(), p.getlevel(), p.getminmax()) for p in self.prerequisites]
 
-    def getskilllevel(self, xp):
+    def getskilltable(self):
         if 'Fast Learner' in self.traits.keys() and self.getATlevel(self.traits['Fast Learner']) >= 3:
-            tabletouse = skillleveltablefast
+            return skillleveltablefast
         elif 'Slow Learner' in self.traits.keys() and self.getATlevel(self.traits['Slow Learner']) <= -3:
-            tabletouse = skillleveltableslow
+            return skillleveltableslow
         else:
-            tabletouse = skillleveltable
+            return skillleveltable
+
+    def getskilllevel(self, xp):
+        tabletouse = self.getskilltable()
         for level, thresh in enumerate(tabletouse):
             if xp < thresh:
                 return level-1
         return 10
 
+    def getskillextraxps(self, xp):
+        tabletouse = self.getskilltable()
+        level = self.getskilllevel(xp)
+        if level == -1:
+            return xp
+        return xp - tabletouse[level]
+
+    def getATextraxps(self, xp):
+        return xp - floor(xp/100)*100
+
     def getATlevel(self, xp):
        return int(xp/100)
+
+    def applyprerequisites(self, prereqs):
+        if prereqs == []:
+            return
+        for newPrereq in prereqs:
+            if newPrereq is None:
+                continue
+            for prereq in self.prerequisites:
+                if prereq.SAT == newPrereq.SAT:
+                    if prereq.minmax == newPrereq.minmax:
+                        if prereq.minmax == 'min' and newPrereq.level > prereq.level:
+                            prereq.level = newPrereq.level
+                            break
+                        elif prereq.minmax == 'max' and newPrereq.level < prereq.level:
+                            prereq.level = newPrereq.level
+                            break
+            if newPrereq not in self.prerequisites:
+                self.prerequisites.append(newPrereq)
+
+
+
 

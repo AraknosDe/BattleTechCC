@@ -8,11 +8,12 @@ def insert_list(listbox:Listbox, list):
 
 class ListSelectionFrame(Frame):
 
-    def __init__(self, master, header, addfunc, removefunc, labeltext=None):
+    def __init__(self, master, header, addfunc, removefunc, labeltext=None, extrabuttonframelist=None):
         self.header = header
         self.addfunc = addfunc
         self.removefunc = removefunc
         self.labeltext = labeltext
+        self.extrabuttonframelist = extrabuttonframelist
         super().__init__(master)
         self._setup_widgets()
 
@@ -34,16 +35,29 @@ class ListSelectionFrame(Frame):
         self.infolabel = Label(self.controlpanelframe, text=self.labeltext)
         self.infolabel.grid(column=0, row=0, columnspan=2, rowspan=1, sticky=NSEW)
 
+        if self.extrabuttonframelist is not None:
+            extrarow = 1
+            self.extrabuttonframe = Frame(self.controlpanelframe)
+
+            for i, (label, func) in enumerate(self.extrabuttonframelist):
+                button = Button(self.extrabuttonframe, text=label, command=func)
+                button.grid(column=0, row=i, columnspan=1, rowspan=1, sticky=NSEW)
+                self.extrabuttonframe.rowconfigure(i, weight=1)
+            self.extrabuttonframe.columnconfigure(0, weight=1)
+            self.extrabuttonframe.grid(column=0, row=1, columnspan=2, rowspan=1, sticky=NSEW)
+        else:
+            extrarow = 0
+
         self.skilladd = Button(self.controlpanelframe, text="Add", command=self.addfunc)
-        self.skilladd.grid(column=0, row=1, columnspan=1, rowspan=1, sticky=NSEW)
+        self.skilladd.grid(column=0, row=1+extrarow, columnspan=1, rowspan=1, sticky=NSEW)
 
         self.skillremove = Button(self.controlpanelframe, text="Remove", command=self.removefunc)
-        self.skillremove.grid(column=1, row=1, columnspan=1, rowspan=1, sticky=NSEW)
+        self.skillremove.grid(column=1, row=1+extrarow, columnspan=1, rowspan=1, sticky=NSEW)
 
         self.xpamtvalue = StringVar(value=0)
 
         self.xpamt = Spinbox(self.controlpanelframe, from_=0, wrap=0, textvariable=self.xpamtvalue)
-        self.xpamt.grid(column=0, row=2, columnspan=2, rowspan=1, sticky=NSEW)
+        self.xpamt.grid(column=0, row=2+extrarow, columnspan=2, rowspan=1, sticky=NSEW)
 
         # character skill list
         self.statstate = MultiColumnListbox(self, self.header, ())

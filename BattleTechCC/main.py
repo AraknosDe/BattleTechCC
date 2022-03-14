@@ -533,11 +533,22 @@ class CharCreator(Frame):
 
         self.setup_skillstab()
 
-
     def setup_skillstab(self):
-        self.skillstablistselect = ListSelectionFrame(self.skillstab, SATheader, self.addSATload, self.removeSATload)
-        self.skillstablistselect.pack(expand=1, fill=BOTH)
-        self.updatecharSATlistload()
+        self.skillstablistselect = ListSelectionFrame(self.skillstab, SATheader, self.addSATload, self.removeSATload,
+            extrabuttonframelist=[('Optimize Skills', self.optimize_skills),
+                                  ('Optimize Attributes', self.optimize_attributes),
+                                  ('Optimize Traits', self.optimize_traits)])
+        self.skillstablistselect.grid(row=0, column=0, sticky=NSEW)
+
+        self.skillstabprereqdisplay = MultiColumnListbox(self.skillstab, prereqheader, self.current_char.getprereqtuples())
+        self.skillstabprereqdisplay.grid(row=0, column=1, sticky=NSEW)
+
+        self.skillstab.columnconfigure(0, weight=1)
+        self.skillstab.columnconfigure(1, weight=0)
+
+        self.skillstab.rowconfigure(0, weight=1)
+
+        self.update_charinfoload()
         self.skillstablistselect.putlistinstore(database.getalllist())
 
     def update_freexps(self):
@@ -550,12 +561,34 @@ class CharCreator(Frame):
     def updatecharSATlistwizard(self):
         self.wizardcharacterdisplay.update_tree(SATheader, self.current_char.getSATtuples())
 
+    def updateprereqlistload(self):
+        self.skillstabprereqdisplay.update_tree(prereqheader, self.current_char.getprereqtuples())
+
     def update_charinfoload(self):
         self.updatecharSATlistload()
         self.update_freexps()
+        self.updateprereqlistload()
 
     def update_charinfowizard(self):
         self.updatecharSATlistwizard()
+
+    def optimize_skills(self):
+        Slist = [(skill, xps) for skill, xps in self.current_char.skills.items()]
+        for skill, xps in Slist:
+            self.current_char.addSAT(skill, -self.current_char.getskillextraxps(xps))
+        self.update_charinfoload()
+
+    def optimize_attributes(self):
+        Alist = [(attr, xps) for attr, xps in self.current_char.attributes.items()]
+        for attr, xps in Alist:
+            self.current_char.addSAT(attr, -self.current_char.getATextraxps(xps))
+        self.update_charinfoload()
+
+    def optimize_traits(self):
+        Tlist = [(trait, xps) for trait, xps in self.current_char.traits.items()]
+        for trait, xps in Tlist:
+            self.current_char.addSAT(trait, -self.current_char.getATextraxps(xps))
+        self.update_charinfoload()
 
     def addSATload(self):
         if not self.skillstablistselect.isstoreselected():
