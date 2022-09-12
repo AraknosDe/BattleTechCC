@@ -341,7 +341,7 @@ class Prerequisite:
 
     def __str__(self):
         return "Prerequisite(%s %s %r)" \
-               % (self.SAT, '>=' if self.minmax == min else '<=', self.level)
+               % (self.SAT, '>=' if self.minmax == 'min' else '<=', self.level)
 
     def __hash__(self):
         return hash((self.minmax, self.SAT, self.level))

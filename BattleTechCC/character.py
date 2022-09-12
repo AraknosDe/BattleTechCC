@@ -133,6 +133,7 @@ class Character:
         for newPrereq in prereqs:
             if newPrereq is None:
                 continue
+            addnew = True
             for prereq in self.prerequisites:
                 if prereq.SAT == newPrereq.SAT:
                     if prereq.minmax == newPrereq.minmax:
@@ -142,9 +143,9 @@ class Character:
                         elif prereq.minmax == 'max' and newPrereq.level < prereq.level:
                             prereq.level = newPrereq.level
                             break
-            if newPrereq not in self.prerequisites:
+                        addnew = False
+            if newPrereq not in self.prerequisites and addnew:
                 self.prerequisites.append(newPrereq)
-
 
 
 
