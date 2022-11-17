@@ -72,6 +72,38 @@ def getlangsecondary(affiliation):
 def getlangall(affiliation):
     return getlangprimary(affiliation) + getlangsecondary(affiliation)
 
+def isgenericlang(skill):
+    if 'Any' not in skill: # 'Language/<affiliation>'
+        start = skill.find('/')
+        aff = skill[start + 1:]
+        return aff in affiliationlist and skill[:start] == "Language"
+    else: # 'Language/Any <affiliation> Secondary' or 'Language/Any <affiliation>'
+        start = skill.find('Any ')
+        end = skill.find(' Secondary')
+        if end == -1: # 'Language/Any <affiliation>'
+            aff = skill[start + len('Any '):]  # skip Any
+        else: # 'Language/Any <affiliation> Secondary'
+            aff = skill[start + len('Any '):end]  # skip Any
+        return aff in affiliationlist and skill[:start] == "Language/"
+
+
+#in form 'Language/<affiliation>' or 'Language/Any <affiliation> Secondary'
+def resolvegenericlang(skill):
+    if 'Any' not in skill: # 'Language/<affiliation>'
+        # get all for aff
+        start = skill.find('/')
+        aff = skill[start + 1:]  # skip /
+        return getlangall(aff)
+    else: # 'Language/Any <affiliation> Secondary'
+        start = skill.find('Any ')
+        end = skill.find(' Secondary')
+        if end == -1: # 'Language/Any <affiliation>'
+            aff = skill[start + len('Any '):]  # skip Any
+            return getlangall(aff)
+        else: # 'Language/Any <affiliation> Secondary'
+            aff = skill[start + len('Any '):end]  # skip Any
+            return getlangsecondary(aff)
+
 for line in skillsraw:
     skill = line[:line.find(';')]
     linktxt = line[line.find(';') + 1:line.find(',')]
@@ -154,9 +186,6 @@ with open(resourcedir + r"/phenotype.dat") as f:
 def getSATtypelist(type):
     return [item for item in alllist if type == item[:item.rfind('/')]]
 
-def parselangmacro(lm, SAT, xps):
-    pass
-
 def parsefieldmacro(curlm, field):
     if field in fielddict.keys():
         fieldlm = fielddict[field]
@@ -194,6 +223,8 @@ def parseANYmacro(SAT, xps, anyprereq=[]):
     elif SAT == "Any Attribute":
         for option in attributeslist:
             choice.append(ChoiceOption(option, xps, prereq=anyprereq))
+    elif isgenericlang(SAT):
+        return [ChoiceOption(SAT, xps, prereq=[])]
 
     type = SAT[:SAT.find('/')]
 
@@ -210,6 +241,15 @@ def parseANYmacro(SAT, xps, anyprereq=[]):
         print("No values found for ANY macro <{}>".format(SAT))
         return
 
+    return choice
+
+def isregularmacro(SAT):
+    return SAT in macros.keys()
+
+def parseregularmacro(SAT, xps, anyprereq=[]):
+    choice = []
+    for option in macros[SAT]:
+        choice.append(ChoiceOption(option, xps, prereq=anyprereq))
     return choice
 
 def parselistmacro(SAT, xps):
@@ -275,6 +315,8 @@ def parselifemodule(lmitem):
             SAT, xps = list(fixedxp.items())[0]
             if "Any" in SAT:
                 lm.addchoice(parseANYmacro(SAT, xps))
+            elif isregularmacro(SAT):
+                lm.addchoice(parseregularmacro(SAT, xps))
             elif SAT == 'Language/Affiliation':
                 lm.addchoice([ChoiceOption(SAT, xps, prereq=[])])
             elif 'Language' in SAT and SAT not in skillslist:
@@ -299,6 +341,8 @@ def parselifemodule(lmitem):
                         optprereqparsed = [Prerequisite(optprereqSAT, optprereqSATval, optprereqSATcond)]
                     if "Any" in option:
                         choice = choice + parseANYmacro(option, xps, optprereqparsed)
+                    elif isregularmacro(option):
+                        choice = choice + parseregularmacro(option, xps, optprereqparsed)
                     elif 'Language' in option and option not in skillslist:
                         aff = option[option.find('/')+1:]
                         if aff in affiliationlist:
@@ -309,6 +353,8 @@ def parselifemodule(lmitem):
                 for option in choicedict['options']:
                     if "Any" in option:
                         choice = choice + parseANYmacro(option, xps)
+                    elif isregularmacro(option):
+                        choice = choice + parseregularmacro(option, xps)
                     elif 'Language' in option and option not in skillslist:
                         aff = option[option.find('/')+1:]
                         if aff in affiliationlist:
@@ -408,18 +454,6 @@ def getalllist():
     return alllist
 
 
-
-#in form 'Language/<affiliation>' or 'Language/Any <affiliation> Secondary'
-def resolvegenericlang(skill):
-    if 'Any' not in skill:  # 'Language/<affiliation>'
-        # get all for aff
-        start = skill.find('/')
-        aff = skill[start + 1:]  # skip /
-        return getlangall(aff)
-    else:  # 'Language/Any <affiliation> Secondary'
-        start = skill.find('Any')
-        aff = skill[start + len('Any '):]  # skip /
-        return getlangsecondary(aff)
 
 
 

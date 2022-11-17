@@ -170,9 +170,10 @@ class CharCreator(Frame):
             print("duplicate base lm or no base lm")
             self.setup_main()
             return
-        self.current_bio.addlifemodule(baselm[0])
-        self.current_bio.addchoices(())
-        self.current_bio.addflexxpchoice({})
+        # self.current_bio.addlifemodule(baselm[0])
+        # self.current_bio.addchoices(())
+        # self.current_bio.addflexxpchoice({})
+        self.current_bio.addstage(baselm[0], (), {})
         self.updatecharfrombio()
         self.advancestage()
 
@@ -229,7 +230,7 @@ class CharCreator(Frame):
         self.flexiblexpslistselect.puttuplesinstatstate(self.genflexxptuples())
         self.current_bio.changeflexxpchoice(self.currentflexxpchoices)
 
-        self.current_char = self.current_bio.generatecharacter()
+        self.updatecharfrombio()
         self.wizardcharacterdisplay.update_tree(SATheader, self.current_char.getSATtuples())
         self.prereqdisplay.update_tree(prereqheader, self.current_char.getprereqtuples())
         self.update_freeflexxpdisplay()
@@ -333,6 +334,7 @@ class CharCreator(Frame):
         if treeelem == self.combotreehead:
             self.wizard_update_lm(thislm)
         treeelem.destroychildren()
+        self.updatewizardcharacterdisplay()
         if thislm != None:
             for choice in thislm.getchoices(bio=self.current_bio):
                 child = Comboboxtreeelem(parent=treeelem, comboboxmaster=self.comboframe)
@@ -341,7 +343,7 @@ class CharCreator(Frame):
                 child.combobox.bind("<<ComboboxSelected>>", partial(self.updatecombos, child))
                 treeelem.addchild(child)
         self.redrawcombosplace(treeelem)
-        self.updatewizardcharacterdisplay()
+        # self.updatewizardcharacterdisplay()
 
     def wizardcombo(self):
         pass
@@ -445,11 +447,9 @@ class CharCreator(Frame):
         else:
             self.stage = self.nextstageoptions[0]
 
-        self.current_bio.addlifemodule(Lifemodule(name='Placeholder', stage=self.stage))
         self.currentchoices = ([], [])
-        self.current_bio.addchoices(self.currentchoices)
         self.currentflexxpchoices = {}
-        self.current_bio.addflexxpchoice(self.currentflexxpchoices)
+        self.current_bio.addstage(Lifemodule(name='Placeholder', stage=self.stage), self.currentchoices, self.currentflexxpchoices)
         self.freeflexxp = 0
         self.setup_stage()
 
@@ -462,7 +462,9 @@ class CharCreator(Frame):
         self.stage = self.current_bio.getlatestvalidstage()
 
         self.currentchoices = self.current_bio.getlatestchoices()
-        self.currentflexxpchoices = self.current_bio.getlatestflexxpchoices()
+        # self.currentflexxpchoices = self.current_bio.getlatestflexxpchoices()
+        # print(self.currentflexxpchoices)
+        self.restoreflexxp()
 
         #self.current_bio.removestage()
 

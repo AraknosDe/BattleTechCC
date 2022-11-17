@@ -22,32 +22,13 @@
 			"affiliation": "Capellan",
 			"clanrestrict": "nonclan",
 			"fixedxps": [
+				{"Language/Affiliation": 20},
+				{"Language/Any Capellan Secondary": 10},
 				{"WIL": 50},
 				{"Exceptional Attribute/EDG": 100},
 				{"Compulsion/Paranoia": -100},
 				{"Protocol/Capellan": 10},
 				{"Martial Arts": 5}
-			],
-			"choices": [
-				{
-					"XPs": 20,
-					"options": [
-						"Language/Mandarin Chinese",
-						"Language/Russian",
-						"Language/Cantonese",
-						"Language/Vietnamese",
-						"Language/English"
-					]
-				},
-				{
-					"XPs": 10,
-					"options": [
-						"Language/Russian",
-						"Language/Cantonese",
-						"Language/Vietnamese",
-						"Language/English"
-					]
-				}
 			],
 			"substage1": {
 				"options": {
@@ -56,19 +37,8 @@
 						"fixedxps": [
 							{"EDG": 50},
 							{"Wealth": 15},
-							{"Protocol/FedSuns": 5}
-						],
-						"choices": [
-							{
-								"XPs": 5,
-								"options": [
-									"Language/English",
-									"Language/French",
-									"Language/German",
-									"Language/Hindi",
-									"Language/Russian"
-								]
-							}
+							{"Protocol/FedSuns": 5},
+							{"Language/Any FedSuns": 5}
 						]
 					},
 					"Liao Commonality": {
@@ -162,7 +132,7 @@
 					},
 					"None": { }
 				}
-			}	
+			}
 		},
 		"Draconis Combine (House Kurita)": {
 			"stage": 0,
@@ -170,6 +140,7 @@
 			"affiliation": "Combine",
 			"clanrestrict": "nonclan",
 			"fixedxps": [
+				{"Language/Affiliation": 20},
 				{"WIL": 50},
 				{"Compulsion/Xenophobia": -100},
 				{"Wealth": -50},
@@ -178,15 +149,6 @@
 				{"Protocol/Combine": 15}
 			],
 			"choices": [
-				{
-					"XPs": 20,
-					"options": [
-						"Language/Japanese",
-						"Language/Arabic",
-						"Language/English",
-						"Language/Swedenese"
-					]
-				},
 				{
 					"XPs": 100,
 					"options": [
@@ -407,6 +369,7 @@
 			"affiliation": "Lyran",
 			"clanrestrict": "nonclan",
 			"fixedxps": [
+				{"Language/Affiliation": 20},
 				{"WIL": -50},
 				{"EDG": -50},
 				{"Equipped": 100},
@@ -496,7 +459,8 @@
 			"affiliation": "Free Worlds",
 			"clanrestrict": "nonclan",
 			"fixedxps": [
-				{"Language/Any Secondary": 15},
+				{"Language/Affiliation": 20},
+				{"Language/Any Free Worlds Secondary": 15},
 				{"Art/Any": 10}
 			],
 			"substage1": {
@@ -569,6 +533,7 @@
 			"affiliation": "Rasalhague",
 			"clanrestrict": "nonclan",
 			"fixedxps": [
+				{"Language/Affiliation": 20},
 				{"WIL": 25},
 				{"EDG": -25},
 				{"Negotiation": 15},
@@ -627,6 +592,7 @@
 			"affiliation": "Periphery",
 			"clanrestrict": "nonclan",
 			"fixedxps": [
+				{"Language/Affiliation": 20},
 				{"Equipped": -150},
 				{"Perception": 15},
 				{"Survival/Any": 20}
@@ -761,6 +727,171 @@
 				}
 			}	
 		},
+		"Major Periphery": {
+			"stage": 0,
+			"cost": 100,
+			"affiliation": "Periphery",
+			"clanrestrict": "nonclan",
+			"fixedxps": [
+				{"Equipped": -50},
+				{"Any": 15},
+				{"Any": 15},
+				{"Any": 15}
+			],
+			"substage1": {
+				"options": {
+					"Circinus Federation": {
+						"cost": 0,
+						"affiliation": "Circinus",
+						"fixedxps": [
+							{"Language/Affiliation": 20},
+							{"STR": 100},
+							{"BOD": 75},
+							{"INT": -100},
+							{"WIL": 70},
+							{"Illiterate": -75},
+							{"Reputation": -200},
+							{"Toughness": 300},
+							{"Wealth": -125}
+						],
+						"choices": [
+							{
+								"XPs": 20,
+								"options": [
+									"Animal Handling/Any",
+									"Martial Arts",
+									"MedTech/Any",
+									"Small Arms",
+									"Streetwise",
+									"MedTech/Any",
+									"Survival/Any",
+									"Tracking/Any"
+								]
+							},
+							{
+								"XPs": 20,
+								"options": [
+									"Animal Handling/Any",
+									"Martial Arts",
+									"MedTech/Any",
+									"Small Arms",
+									"Streetwise",
+									"MedTech/Any",
+									"Survival/Any",
+									"Tracking/Any"
+								]
+							},
+							{
+								"XPs": 20,
+								"options": [
+									"Animal Handling/Any",
+									"Martial Arts",
+									"MedTech/Any",
+									"Small Arms",
+									"Streetwise",
+									"MedTech/Any",
+									"Survival/Any",
+									"Tracking/Any"
+								]
+							}							
+						]
+					},
+					"Magistracy of Canopus": {
+						"cost": 0,
+						"affiliation": "Magistracy",
+						"fixedxps": [
+							{"Language/Affiliation": 20},
+							{"CHA": 100},
+							{"EDG": 50},
+							{"Gregarious": 50},
+							{"Illiterate": -25},
+							{"Reputation": -125},
+							{"Wealth": 25},
+							{"Streetwise/Magistracy": 15}
+						],
+						"choices": [
+							{
+								"XPs": 15,
+								"options": [
+									"Acting",
+									"MedTech/Any"
+								]
+							}							
+						]
+					},
+					"Marian Hegemony": {
+						"cost": 0,
+						"affiliation": "Marian",
+						"fixedxps": [
+							{"Language/Affiliation": 20},
+							{"WIL": 100},
+							{"Compulsion/Paranoia": -50},
+							{"Connections": 25},
+							{"Reputation": 150},
+							{"Toughness": 125},
+							{"Interest/Marian History": 15},
+							{"Interest/Roman History": 10},
+							{"Language/Latin": 15},
+							{"Protocol/Marian": 10},
+							{"Strategy": 5}
+						],
+						"choices": [
+							{
+								"XPs": 20,
+								"options": [
+									"Language/Latin",
+									"Language/French",
+									"Language/German",
+									"Language/Greek",
+									"Language/Spanish",
+									"Language/Swedish"
+								]
+							}							
+						]
+					},
+					"Outworlds Alliance": {
+						"cost": 0,
+						"affiliation": "Outworlds",
+						"fixedxps": [
+							{"Language/Affiliation": 20},
+							{"EDG": 75},
+							{"Equipped": -55},
+							{"G-Tolerance": 125},
+							{"Wealth": -75},
+							{"Streetwise/Outworlds": 10},
+							{"Survival/Any": 10}
+						],
+						"choices": [
+							{
+								"XPs": 15,
+								"options": [
+									"Martial Arts",
+									"MedTech/Any",
+									"Small Arms"
+								]
+							}							
+						]
+					},					
+					"Taurian Concordat": {
+						"cost": 0,
+						"affiliation": "Taurian",
+						"fixedxps": [
+							{"Language/Affiliation": 20},
+							{"WIL": 150},
+							{"EDG": 50},
+							{"Compulsion/Distrust of Federated Suns": -75},
+							{"Compulsion/Stubborn": -75},
+							{"Martial Arts": 10},
+							{"Negotiation": 10},
+							{"Small Arms": 15},
+							{"Streetwise/Taurian": 15},
+							{"Survival/Any": 5}
+						]
+					},					
+					"None": { }
+				}
+			}	
+		},
 		"Blue Collar": {
 			"stage": 1,
 			"cost": 210,
@@ -880,7 +1011,7 @@
 				{"Streetwise/Any": 10}
 			]
         	},
-        	"Nobility": {
+		"Nobility": {
 			"stage": 1,
 			"cost": 215,
 			"setage": 10,
@@ -1357,6 +1488,88 @@
 			},
 			"flexiblexps": 200
 		},
+		"Intelligence Operative Training": {
+			"stage": 3,
+			"cost": 760,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"INT": 100},
+				{"WIL": 150},
+				{"Any Attribute": 50},
+				{"Alternate ID": 50},
+				{"Connections": 200},
+				{"In For Life": -300},
+				{"Rank": 250},
+				{"Wealth": 50},
+				{"Acting": 20},
+				{"Computers": 20},
+				{"Protocol/Affiliation": 20}
+			],
+			"prereq": {
+				"INT": [
+					4,
+					"min"
+				],
+				"WIL": [
+					5,
+					"min"
+				],
+				"Connections": [
+					2,
+					"min"
+				]
+			},
+			"substage1": {
+				"options": {
+					"Basic Training": {
+						"agedelta": 1,
+						"field": "Basic Training"
+					}
+				}
+			},
+			"substage2": {
+				"options": {
+					"Analysis": {
+						"agedelta": 1,
+						"field": "Analysis"
+					},
+					"Covert Operations": {
+						"agedelta": 1,
+						"field": "Covert Operations"
+					},
+					"Detective": {
+						"agedelta": 1,
+						"field": "Detective"
+					},
+					"Intelligence": {
+						"agedelta": 1,
+						"field": "Intelligence"
+					},
+					"Police Officer": {
+						"agedelta": 1,
+						"field": "Police Officer"
+					},
+					"Scout": {
+						"agedelta": 1,
+						"field": "Scout"
+					}
+				}
+			},
+			"substage3": {
+				"options": {
+					"None": {},
+					"Police Tactical Officer": {
+						"agedelta": 2,
+						"field": "Police Tactical Officer"
+					},
+					"Special Forces": {
+						"agedelta": 2,
+						"field": "Special Forces"
+					}
+				}
+			},
+			"flexiblexps": 150
+		},
 		"Military Academy (Prep School or Military School)": {
 			"stage": 3,
 			"cost": 830,
@@ -1819,7 +2032,7 @@
 				{"Perception": 35},
 				{"Prestidigitation": 35},
 				{"Protocol/Affiliation": 25},
-				{"Security Systems": 45},
+				{"Security Systems/Any": 45},
 				{"Small Arms": 75},
 				{"Stealth": 35},
 				{"Streetwise/Affiliation": 50}
@@ -1853,134 +2066,169 @@
 			],
 			"flexiblexps": 165
 		},
-		"Covert Operations (Lyran)": {
+		"Covert Operations": {
 			"stage": 4,
 			"cost": 1000,
 			"agedelta": 6,
 			"clanrestrict": "no",
 			"fixedxps": [
-				{"WIL": 30},
-				{"Connections": 85},
-				{"Enemy": -45},
-				{"Introvert": -85},
-				{"Property": 25},
-				{"Rank": 85},
-				{"Reputation": -20},
-				{"Acting": 30},
-				{"Computers": 50},
-				{"Cryptography": 35},
-				{"Driving/Any": 35},
-				{"Forgery": 20},
-				{"Investigation": 50},
-				{"Martial Arts": 40},
-				{"Negotiation": 50},
-				{"Strategy": 25},
-				{"Support Weapons": 25},
-				{"Tactics/Any": 25},
-				{"Training": 40}
-			]
-		},
-		"Covert Operations (Independent)": {
-			"stage": 4,
-			"cost": 1000,
-			"agedelta": 6,
-			"clanrestrict": "no",
-			"fixedxps": [
-				{"RFL": 75},
-				{"CHA": -50},
-				{"Bloodmark": -50},
-				{"Connections": 75},
-				{"Extra Income": 25},
-				{"Reputation": -75},
-				{"Wealth": -50},
-				{"Acting": 50},
-				{"Climbing": 35},
-				{"Cryptography": 40},
-				{"Escape Artist": 75},
-				{"Interest/Any": 50},
-				{"Language/Any": 75},
-				{"Martial Arts": 35},
-				{"Navigation/Any": 25},
-				{"Protocol/Any": 45},
-				{"Science/Chemistry": 25},
-				{"Small Arms": 25},
-				{"Streetwise/Any": 35},
-				{"Tactics/Any": 35}
-			]
+				{"Alternate ID": 85},
+				{"Enemy": -25},
+				{"In For Life": -110},
+				{"Sixth Sense": 50},
+				{"Acting": 25},
+				{"Perception": 50},
+				{"Survival/Any": 75}
+			],
+			"choices": [
+				{
+					"XPs": 50,
+					"options": [
+						"BOD",
+						"RFL",
+						"WIL",
+						"EDG"
+					]
+				},
+				{
+					"XPs": 50,
+					"options": [
+						"BOD",
+						"RFL",
+						"WIL",
+						"EDG"
+					]
+				},
+				{
+					"XPs": 25,
+					"options": [
+						"Military Skill",
+						"Intelligence/Police Skill"
+					]
+				},
+				{
+					"XPs": 25,
+					"options": [
+						"Military Skill",
+						"Intelligence/Police Skill"
+					]
+				},
+				{
+					"XPs": 25,
+					"options": [
+						"Military Skill",
+						"Intelligence/Police Skill"
+					]
+				},
+				{
+					"XPs": 25,
+					"options": [
+						"Military Skill",
+						"Intelligence/Police Skill"
+					]
+				},
+				{
+					"XPs": 25,
+					"options": [
+						"Military Skill",
+						"Intelligence/Police Skill"
+					]
+				},
+				{
+					"XPs": 25,
+					"options": [
+						"Military Skill",
+						"Intelligence/Police Skill"
+					]
+				}
+			],
+			"prereq":
+			{
+				"Combat Paralysis": [
+					0,
+					"min"
+				]
+			},
+			"substage1": {
+				"options": {
+					"Periphery": {
+						"cost": 0,
+						"fixedxps": [
+							{"BOD": 25},
+							{"WIL": 50},
+							{"Alternate ID": 50},
+							{"Compulsion/Gambling": -35},
+							{"Connections": 25},
+							{"Introvert": -35},
+							{"Administration": 50},
+							{"Driving/Any": 50},
+							{"Disguise": 35},
+							{"Interrogation": 65},
+							{"Melee Weapons": 25},
+							{"Negotiation": 25},
+							{"Security Systems/Any": 25},
+							{"Small Arms": 60},
+							{"Survival/Any": 50},
+							{"Thrown Weapons/Any": 35}
+						]
+					},
+					"Lyran": {
+						"cost": 0,
+						"fixedxps": [
+							{"WIL": 30},
+							{"Connections": 85},
+							{"Enemy": -45},
+							{"Introvert": -85},
+							{"Property": 25},
+							{"Rank": 85},
+							{"Reputation": -20},
+							{"Acting": 30},
+							{"Computers": 50},
+							{"Cryptography": 35},
+							{"Driving/Any": 35},
+							{"Forgery": 20},
+							{"Investigation": 50},
+							{"Martial Arts": 40},
+							{"Negotiation": 50},
+							{"Strategy": 25},
+							{"Support Weapons": 25},
+							{"Tactics/Any": 25},
+							{"Training": 40}
+						]
+					},
+					"Independent": {
+						"cost": 0,
+						"fixedxps": [
+							{"RFL": 75},
+							{"CHA": -50},
+							{"Bloodmark": -50},
+							{"Connections": 75},
+							{"Extra Income": 25},
+							{"Reputation": -75},
+							{"Wealth": -50},
+							{"Acting": 50},
+							{"Climbing": 35},
+							{"Cryptography": 40},
+							{"Escape Artist": 75},
+							{"Interest/Any": 50},
+							{"Language/Any": 75},
+							{"Martial Arts": 35},
+							{"Navigation/Any": 25},
+							{"Protocol/Any": 45},
+							{"Science/Chemistry": 25},
+							{"Small Arms": 25},
+							{"Streetwise/Any": 35},
+							{"Tactics/Any": 35}
+						]
+					}
+				}
+			}
 		}
 	},
 	"macros": {
 		"Fields": {
 			"elementcost": 30,
 			"elementrebate": 6,
-			"Communications": {
-				"fixedxps": [
-					{"Acting": 30},
-					{"Career/Communications": 30},
-					{"Communications/Conventional EM": 30},
-					{"Computers": 30},
-					{"Protocol/Any": 30},
-					{"Sensor Operations": 30}
-				],
-				"prereq": {
-					"INT": [
-						4,
-						"min"
-					]
-				}
-			},
-			"Cartographer": {
-				"fixedxps": [
-					{"Career/Cartographer": 30},
-					{"Computers": 30},
-					{"Navigation/Air": 30},
-					{"Navigation/Ground": 30},
-					{"Perception": 30},
-					{"Sensor Operations": 30}
-				],
-				"prereq": {
-					"INT": [
-						4,
-						"min"
-					]
-				}
-			},
-			"General Studies": {
-				"fixedxps": [
-					{"Career/Any": 30},
-					{"Computers": 30},
-					{"Interest/Any": 30},
-					{"Navigation/Ground": 30},
-					{"Perception": 30},
-					{"Protocol/Affiliation": 30}
-				],
-				"prereq": {
-					"INT": [
-						3,
-						"min"
-					]
-				}
-			},
-			"Merchant": {
-				"fixedxps": [
-					{"Administration": 30},
-					{"Appraisal": 30},
-					{"Career/Merchant": 30},
-					{"Negotiation": 30},
-					{"Protocol/Any": 30},
-					{"Streetwise/Any": 30}
-				],
-				"prereq": {
-					"CHA": [
-						3,
-						"min"
-					],
-					"WIL": [
-						3,
-						"min"
-					]
-				}
-			},
 			"Analysis": {
 				"fixedxps": [
 					{"Computers": 30},
@@ -2000,93 +2248,6 @@
 						4,
 						"min"
 					]
-				}
-			},
-			"HPG Technician": {
-				"fixedxps": [
-					{"Administration": 30},
-					{"Communications/Conventional EM": 30},
-					{"Communications/Hyperpulse Generator": 30},
-					{"Computers": 30},
-					{"Cryptography": 30}
-				]
-			},
-			"Journalist": {
-				"fixedxps": [
-					{"Acting": 30},
-					{"Art/Writing": 30},
-					{"Career/Journalist": 30},
-					{"Computers": 30},
-					{"Investigation": 30},
-					{"Perception": 30}
-				],
-				"prereq": {
-					"INT": [
-						3,
-						"min"
-					],
-					"CHA": [
-						4,
-						"min"
-					],
-					"WIL": [
-						4,
-						"min"
-					]					
-				}
-			},
-			"Manager": {
-				"fixedxps": [
-					{"Administration": 30},
-					{"Career/Management": 30},
-					{"Leadership": 30},
-					{"Negotiation": 30},
-					{"Protocol/Affiliation": 30},
-					{"Training": 30}
-				],
-				"prereq": {
-					"": [
-						3,
-						"min"
-					]
-				}
-			},
-			"Medical Assistant": {
-				"fixedxps": [
-					{"Career/MedTech": 30},
-					{"Computers": 30},
-					{"Interest/Pharmacology": 30},
-					{"MedTech/General": 30},
-					{"Perception": 30}
-				],
-				"prereq": {
-					"DEX": [
-						3,
-						"min"
-					],
-					"INT": [
-						4,
-						"min"
-					]
-				}
-			},
-			"Merchant Marine": {
-				"fixedxps": [
-					{"Career/Merchant Marine": 30},
-					{"Protocol/Any": 30},
-					{"Technician/Aeronautics": 30},
-					{"Technician/Any": 30},
-					{"Zero-G Operations": 30}
-				],
-				"prereq": {
-					"RFL": [
-						3,
-						"min"
-					],
-					"TDS": [
-						0,
-						"min"
-					]					
 				}
 			},
 			"Anthropologist": {
@@ -2120,211 +2281,6 @@
 						"min"
 					]
 				}
-			},		
-			"Pilot/Aerospace (Civilian)": {
-				"fixedxps": [
-					{"Career/Aerospace Pilot": 30},
-					{"Communications/Conventional EM": 30},
-					{"Navigation/Air": 30},
-					{"Navigation/Space": 30},
-					{"Piloting/Aerospace": 30},
-					{"Sensor Operations": 30}
-				],
-				"prereq": {
-					"DEX": [
-						3,
-						"min"
-					],
-					"RFL": [
-						4,
-						"min"
-					],
-					"INT": [
-						3,
-						"min"
-					]					
-				}
-			},		
-			"Pilot/Aircraft (Civilian)": {
-				"fixedxps": [
-					{"Career/Aircraft Pilot": 30},
-					{"Communications/Conventional EM": 30},
-					{"Navigation/Air": 30},
-					{"Sensor Operations": 30},
-					{"Piloting/Air Vehicle": 30}
-				],
-				"prereq": {
-					"DEX": [
-						3,
-						"min"
-					],
-					"RFL": [
-						3,
-						"min"
-					]					
-				}
-			},		
-			"Pilot/DropShip": {
-				"fixedxps": [
-					{"Career/DropShip Pilot": 30},
-					{"Communications/Conventional EM": 30},
-					{"Navigation/Space": 30},
-					{"Piloting/Spacecraft": 30},
-					{"Sensor Operations": 30},
-					{"Zero-G Operations": 30}
-				],
-				"prereq": {
-					"DEX": [
-						4,
-						"min"
-					],
-					"INT": [
-						3,
-						"min"
-					],
-					"WIL": [
-						3,
-						"min"
-					],
-					"TDS": [
-						0,
-						"min"
-					]
-				}
-			},		
-			"Technician/Civilian": {
-				"fixedxps": [
-					{"Appraisal": 30},
-					{"Career/Technician": 30},
-					{"Technician/Electronic": 30},
-					{"Technician/Mechanical": 30},
-					{"Technician/Nuclear": 30}
-				],
-				"prereq": {
-					"INT": [
-						3,
-						"min"
-					],
-					"DEX": [
-						3,
-						"min"
-					]
-				}
-			},		
-			"Pilot/Exoskeleton": {
-				"fixedxps": [
-					{"Piloting/Battlesuit": 30},
-					{"Sensor Operations": 30},
-					{"Technician/Electronic": 30},
-					{"Technician/Mechanical": 30},
-					{"Technician/Myomer": 30}
-				],
-				"prereq": {
-					"STR": [
-						5,
-						"min"
-					],
-					"BOD": [
-						5,
-						"min"
-					]
-				}
-			},		
-			"Engineer": {
-				"fixedxps": [
-					{"Appraisal": 30},
-					{"Career/Engineer": 30},
-					{"Perception": 30},
-					{"Technician/Nuclear": 30},
-					{"Technician/Any": 30}
-				],
-				"prereq": {
-					"INT": [
-						4,
-						"min"
-					]
-				}
-			},		
-			"Pilot/IndustrialMech": {
-				"fixedxps": [
-					{"Piloting/'Mech": 30},
-					{"Sensor Operations": 30},
-					{"Technician/Electronic": 30},
-					{"Technician/Mechanical": 30},
-					{"Technician/Myomer": 30}
-				],
-				"prereq": {
-					"DEX": [
-						3,
-						"min"
-					],
-					"RFL": [
-						3,
-						"min"
-					]
-				}
-			},		
-			"Technician/Aerospace": {
-				"fixedxps": [
-					{"Computers": 30},
-					{"Technician/Aeronautics": 30},
-					{"Technician/Nuclear": 30},
-					{"Technician/Jets": 30},
-					{"Zero-G Operations": 30}
-				],
-				"prereq": {
-					"INT": [
-						4,
-						"min"
-					]
-				}
-			},		
-			"Pilot/JumpShip": {
-				"fixedxps": [
-					{"Administration": 30},
-					{"Computers": 30},
-					{"Navigation/K-F Jump": 30},
-					{"Navigation/Space": 30}
-				],
-				"prereq": {
-					"INT": [
-						5,
-						"min"
-					],
-					"TDS": [
-						0,
-						"min"
-					]
-				}
-			},		
-			"Technician/'Mech": {
-				"fixedxps": [
-					{"Technician/Electronic": 30},
-					{"Technician/Jets": 30},
-					{"Technician/Mechanical": 30},
-					{"Technician/Myomer": 30},
-					{"Technician/Nuclear": 30}
-				],
-				"prereq": {
-					"INT": [
-						4,
-						"min"
-					]
-				}
-			},		
-			"Technician/Vehicle": {
-				"fixedxps": [
-					{"Computers": 30},
-					{"Technician/Electronic": 30},
-					{"Technician/Mechanical": 30},
-					{"Technician/Nuclear": 30}
-				],
-				"prereq": {
-					"INT": [
-						4,
-						"min"
-					]
-				}
 			},
 			"Basic Training": {
 				"fixedxps": [
@@ -2346,7 +2302,7 @@
 					"Rank": [
 						1,
 						"min"
-					]					
+					]
 				}
 			},
 			"Basic Training (Naval)": {
@@ -2382,7 +2338,23 @@
 					"Rank": [
 						1,
 						"min"
-					]					
+					]
+				}
+			},
+			"Cartographer": {
+				"fixedxps": [
+					{"Career/Cartographer": 30},
+					{"Computers": 30},
+					{"Navigation/Air": 30},
+					{"Navigation/Ground": 30},
+					{"Perception": 30},
+					{"Sensor Operations": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
 				}
 			},
 			"Cavalry": {
@@ -2409,15 +2381,272 @@
 					]
 				}
 			},
+			"Communications": {
+				"fixedxps": [
+					{"Acting": 30},
+					{"Career/Communications": 30},
+					{"Communications/Conventional EM": 30},
+					{"Computers": 30},
+					{"Protocol/Any": 30},
+					{"Sensor Operations": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Covert Operations": {
+				"fixedxps": [
+					{"Acting": 30},
+					{"Escape Artist": 30},
+					{"Language/Any": 30},
+					{"Perception": 30},
+					{"Protocol/Any": 30},
+					{"Streetwise/Any": 30},
+					{"Tracking/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Covert Operations (Police Officer)": {
+				"fixedxps": [
+					{"Acting": 30},
+					{"Escape Artist": 30},
+					{"Language/Any": 30},
+					{"Perception": 30},
+					{"Protocol/Any": 30},
+					{"Streetwise/Any": 30},
+					{"Tracking/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Detective": {
+				"fixedxps": [
+					{"Career/Detective": 30},
+					{"Computers": 30},
+					{"Interrogation": 30},
+					{"Investigation": 30},
+					{"Perception": 30},
+					{"Security Systems/Any": 30},
+					{"Streetwise/Affiliation": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Detective (Police Officer)": {
+				"fixedxps": [
+					{"Career/Detective": 30},
+					{"Computers": 30},
+					{"Interrogation": 30},
+					{"Investigation": 30},
+					{"Perception": 30},
+					{"Security Systems/Any": 30},
+					{"Streetwise/Affiliation": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Doctor": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Career/Doctor": 30},
+					{"MedTech/General": 30},
+					{"Protocol/Affiliation": 30},
+					{"Surgery/Any": 30}
+				],
+				"prereq": {
+					"DEX": [
+						4,
+						"min"
+					],
+					"INT": [
+						5,
+						"min"
+					],
+					"WIL": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Engineer": {
+				"fixedxps": [
+					{"Appraisal": 30},
+					{"Career/Engineer": 30},
+					{"Perception": 30},
+					{"Technician/Nuclear": 30},
+					{"Technician/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"General Studies": {
+				"fixedxps": [
+					{"Career/Any": 30},
+					{"Computers": 30},
+					{"Interest/Any": 30},
+					{"Navigation/Ground": 30},
+					{"Perception": 30},
+					{"Protocol/Affiliation": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					]
+				}
+			},
+			"HPG Technician": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Communications/Conventional EM": 30},
+					{"Communications/Hyperpulse Generator": 30},
+					{"Computers": 30},
+					{"Cryptography": 30}
+				]
+			},
 			"Infantry": {
 				"fixedxps": [
 					{"Acrobatics/Free-Fall": 30},
 					{"Artillery": 30},
 					{"Climbing": 30},
-					{"Communications/Conventional": 30},
+					{"Communications/Conventional EM": 30},
 					{"Support Weapons": 30},
 					{"Tactics/Infantry": 30}
 				]
+			},
+			"Infantry/Anti-'Mech": {
+				"fixedxps": [
+					{"Acrobatics/Gymnastics": 30},
+					{"Demolitions": 30},
+					{"Perception": 30},
+					{"Security Systems/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Myomer": 30}
+				],
+				"prereq": {
+					"WIL": [
+						5,
+						"min"
+					]
+				}
+			},
+			"Intelligence": {
+				"fixedxps": [
+					{"Communications/Conventional EM": 30},
+					{"Computers": 30},
+					{"Cryptography": 30},
+					{"Language/Any": 30},
+					{"Sensor Operations": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Intelligence (Police Officer)": {
+				"fixedxps": [
+					{"Communications/Conventional EM": 30},
+					{"Computers": 30},
+					{"Cryptography": 30},
+					{"Language/Any": 30},
+					{"Sensor Operations": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Journalist": {
+				"fixedxps": [
+					{"Acting": 30},
+					{"Art/Writing": 30},
+					{"Career/Journalist": 30},
+					{"Computers": 30},
+					{"Investigation": 30},
+					{"Perception": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					],
+					"CHA": [
+						4,
+						"min"
+					],
+					"WIL": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Manager": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Career/Management": 30},
+					{"Leadership": 30},
+					{"Negotiation": 30},
+					{"Protocol/Affiliation": 30},
+					{"Training": 30}
+				],
+				"prereq": {
+					"": [
+						3,
+						"min"
+					]
+				}
 			},
 			"Marine": {
 				"fixedxps": [
@@ -2444,7 +2673,105 @@
 					"RFL": [
 						4,
 						"min"
-					]					
+					]
+				}
+			},
+			"Medical Assistant": {
+				"fixedxps": [
+					{"Career/MedTech": 30},
+					{"Computers": 30},
+					{"Interest/Pharmacology": 30},
+					{"MedTech/General": 30},
+					{"Perception": 30}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					],
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Merchant": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Appraisal": 30},
+					{"Career/Merchant": 30},
+					{"Negotiation": 30},
+					{"Protocol/Any": 30},
+					{"Streetwise/Any": 30}
+				],
+				"prereq": {
+					"CHA": [
+						3,
+						"min"
+					],
+					"WIL": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Merchant Marine": {
+				"fixedxps": [
+					{"Career/Merchant Marine": 30},
+					{"Protocol/Any": 30},
+					{"Technician/Aeronautics": 30},
+					{"Technician/Any": 30},
+					{"Zero-G Operations": 30}
+				],
+				"prereq": {
+					"RFL": [
+						3,
+						"min"
+					],
+					"TDS": [
+						0,
+						"min"
+					]
+				}
+			},
+			"Military Scientist": {
+				"fixedxps": [
+					{"Career/Military Scientist": 30},
+					{"Computers": 30},
+					{"Cryptography": 30},
+					{"Interest/Military History": 30},
+					{"Strategy": 30},
+					{"Tactics/Any": 30}
+				],
+				"prereq": {
+					"INT": [
+						5,
+						"min"
+					]
+				}
+			},
+			"Pilot/Aerospace (Civilian)": {
+				"fixedxps": [
+					{"Career/Aerospace Pilot": 30},
+					{"Communications/Conventional EM": 30},
+					{"Navigation/Air": 30},
+					{"Navigation/Space": 30},
+					{"Piloting/Aerospace": 30},
+					{"Sensor Operations": 30}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					],
+					"RFL": [
+						4,
+						"min"
+					],
+					"INT": [
+						3,
+						"min"
+					]
 				}
 			},
 			"Pilot/Aerospace (Combat)": {
@@ -2468,6 +2795,25 @@
 					]
 				}
 			},
+			"Pilot/Aircraft (Civilian)": {
+				"fixedxps": [
+					{"Career/Aircraft Pilot": 30},
+					{"Communications/Conventional EM": 30},
+					{"Navigation/Air": 30},
+					{"Sensor Operations": 30},
+					{"Piloting/Air Vehicle": 30}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					],
+					"RFL": [
+						3,
+						"min"
+					]
+				}
+			},
 			"Pilot/Aircraft (Combat)": {
 				"fixedxps": [
 					{"Gunnery/Air Vehicle": 30},
@@ -2483,6 +2829,144 @@
 					],
 					"RFL": [
 						3,
+						"min"
+					]
+				}
+			},
+			"Pilot/Battle Armor": {
+				"fixedxps": [
+					{"Climbing": 30},
+					{"Gunnery/Battlesuit": 30},
+					{"Martial Arts": 30},
+					{"Piloting/Battlesuit": 30},
+					{"Sensor Operations": 30},
+					{"Tactics/Land": 30}
+				],
+				"prereq": {
+					"STR": [
+						6,
+						"min"
+					],
+					"BOD": [
+						5,
+						"min"
+					]
+				}
+			},
+			"Pilot/DropShip": {
+				"fixedxps": [
+					{"Career/DropShip Pilot": 30},
+					{"Communications/Conventional EM": 30},
+					{"Navigation/Space": 30},
+					{"Piloting/Spacecraft": 30},
+					{"Sensor Operations": 30},
+					{"Zero-G Operations": 30}
+				],
+				"prereq": {
+					"DEX": [
+						4,
+						"min"
+					],
+					"INT": [
+						3,
+						"min"
+					],
+					"WIL": [
+						3,
+						"min"
+					],
+					"TDS": [
+						0,
+						"min"
+					]
+				}
+			},
+			"Pilot/Exoskeleton": {
+				"fixedxps": [
+					{"Piloting/Battlesuit": 30},
+					{"Sensor Operations": 30},
+					{"Technician/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Myomer": 30}
+				],
+				"prereq": {
+					"STR": [
+						5,
+						"min"
+					],
+					"BOD": [
+						5,
+						"min"
+					]
+				}
+			},
+			"Pilot/IndustrialMech": {
+				"fixedxps": [
+					{"Piloting/'Mech": 30},
+					{"Sensor Operations": 30},
+					{"Technician/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Myomer": 30}
+				],
+				"prereq": {
+					"DEX": [
+						3,
+						"min"
+					],
+					"RFL": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Pilot/JumpShip": {
+				"fixedxps": [
+					{"Administration": 30},
+					{"Computers": 30},
+					{"Navigation/K-F Jump": 30},
+					{"Navigation/Space": 30}
+				],
+				"prereq": {
+					"INT": [
+						5,
+						"min"
+					],
+					"TDS": [
+						0,
+						"min"
+					]
+				}
+			},
+			"Police Officer": {
+				"fixedxps": [
+					{"Acting": 30},
+					{"Career/Police": 30},
+					{"Driving/Any": 30},
+					{"Martial Arts": 30},
+					{"MedTech/Any": 30},
+					{"Small Arms": 30},
+					{"Streetwise/Affiliation": 30}
+				],
+				"prereq": {
+					"WIL": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Police Tactical Officer": {
+				"fixedxps": [
+					{"Climbing": 30},
+					{"Demolitions": 30},
+					{"Running": 30},
+					{"Support Weapons": 30},
+					{"Tactics/Infantry": 30},
+					{"Thrown Weapons/Any": 30},
+					{"Tracking/Urban": 30}
+				],
+				"prereq": {
+					"RFL": [
+						4,
 						"min"
 					]
 				}
@@ -2545,81 +3029,6 @@
 					"TDS": [
 						0,
 						"min"
-					]					
-				}
-			},
-			"Doctor": {
-				"fixedxps": [
-					{"Administration": 30},
-					{"Career/Doctor": 30},
-					{"MedTech/General": 30},
-					{"Protocol/Affiliation": 30},
-					{"Surgery/Any": 30}
-				],
-				"prereq": {
-					"DEX": [
-						4,
-						"min"
-					],
-					"INT": [
-						5,
-						"min"
-					],
-					"WIL": [
-						3,
-						"min"
-					]
-				}
-			},
-			"Infantry/Anti-'Mech": {
-				"fixedxps": [
-					{"Acrobatics/Gymnastics": 30},
-					{"Demolitions": 30},
-					{"Perception": 30},
-					{"Security Systems/Electronic": 30},
-					{"Technician/Mechanical": 30},
-					{"Technician/Myomer": 30}
-				],
-				"prereq": {
-					"WIL": [
-						5,
-						"min"
-					]
-				}
-			},
-			"Military Scientist": {
-				"fixedxps": [
-					{"Career/Military Scientist": 30},
-					{"Computers": 30},
-					{"Cryptography": 30},
-					{"Interest/Military History": 30},
-					{"Strategy": 30},
-					{"Tactics/Any": 30}
-				],
-				"prereq": {
-					"INT": [
-						5,
-						"min"
-					]
-				}
-			},
-			"Pilot/Battle Armor": {
-				"fixedxps": [
-					{"Climbing": 30},
-					{"Gunnery/Battlesuit": 30},
-					{"Martial Arts": 30},
-					{"Piloting/Battlesuit": 30},
-					{"Sensor Operations": 30},
-					{"Tactics/Land": 30}
-				],
-				"prereq": {
-					"STR": [
-						6,
-						"min"
-					],
-					"BOD": [
-						5,
-						"min"
 					]
 				}
 			},
@@ -2646,7 +3055,70 @@
 						"min"
 					]
 				}
-			}					
+			},
+			"Technician/Aerospace": {
+				"fixedxps": [
+					{"Computers": 30},
+					{"Technician/Aeronautics": 30},
+					{"Technician/Nuclear": 30},
+					{"Technician/Jets": 30},
+					{"Zero-G Operations": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Technician/Civilian": {
+				"fixedxps": [
+					{"Appraisal": 30},
+					{"Career/Technician": 30},
+					{"Technician/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Nuclear": 30}
+				],
+				"prereq": {
+					"INT": [
+						3,
+						"min"
+					],
+					"DEX": [
+						3,
+						"min"
+					]
+				}
+			},
+			"Technician/'Mech": {
+				"fixedxps": [
+					{"Technician/Electronic": 30},
+					{"Technician/Jets": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Myomer": 30},
+					{"Technician/Nuclear": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			},
+			"Technician/Vehicle": {
+				"fixedxps": [
+					{"Computers": 30},
+					{"Technician/Electronic": 30},
+					{"Technician/Mechanical": 30},
+					{"Technician/Nuclear": 30}
+				],
+				"prereq": {
+					"INT": [
+						4,
+						"min"
+					]
+				}
+			}
 		},
 		"Career/Any Non-Military": [
 			"Career/Mining",
@@ -2675,6 +3147,100 @@
 			"Career/Pilot",
 			"Career/Accountant",
 			"Career/Cook"
+		],
+		"Military Skill": [
+			"Career/Soldier",
+			"Career/Pilot",
+			"Driving/Any",
+			"Gunnery/Any",
+			"Navigation/Ground",
+			"MedTech/Any",
+			"Tactics/Sea",
+			"Acrobatics/Gymnastics",
+			"Artillery",
+			"Perception",
+			"Security Systems/Electronic",
+			"Support Weapons",
+			"Tactics/Infantry",
+			"Technician/Myomer",
+			"Gunnery/'Mech",
+			"Administration",
+			"Piloting/'Mech",
+			"Cryptography",
+			"Interest/Military History",
+			"Melee Weapons",
+			"Tactics/Any",
+			"Training",
+			"Gunnery/Aerospace",
+			"Gunnery/Air Vehicle",
+			"Climbing",
+			"Navigation/Air",
+			"Gunnery/Battlesuit",
+			"Piloting/Air Vehicle",
+			"Martial Arts",
+			"Piloting/Aerospace",
+			"Piloting/Battlesuit",
+			"Tactics/Air",
+			"Sensor Operations",
+			"Tactics/Land",
+			"Communications/Conventional EM",
+			"Career/Ship's Crew",
+			"Leadership",
+			"Disguise",
+			"Computers",
+			"Navigation/K-F Jump",
+			"Language/Any",
+			"Gunnery/Spacecraft",
+			"Navigation/Space",
+			"Security Systems/Any",
+			"Technician/Any",
+			"Protocol/Affiliation",
+			"Stealth",
+			"Zero-G Operations",
+			"Strategy",
+			"Streetwise/Any",
+			"Tactics/Space",
+			"Tracking/Any",
+			"Acrobatics/Free-Fall",
+			"Career/Technician",
+			"Demolitions",
+			"Technician/Electronics",
+			"Small Arms",
+			"Technician/Mechanical",
+			"Technician/Nuclear",
+			"Survival/Any",
+			"Technician/Weapons"
+		],
+		"Intelligence/Police Skill": [
+			"Acting",
+			"Career/Detective",
+			"Escape Artist",
+			"Interrogation",
+			"Investigation",
+			"Protocol/Any",
+			"Perception",
+			"Strategy",
+			"Streetwise/Any",
+			"Security Systems/Any",
+			"Tactics/Any",
+			"Tracking/Any",
+			"Communications/Conventional EM",
+			"Career/Police",
+			"Demolitions",
+			"Computers",
+			"Driving/Any",
+			"Running",
+			"Cryptography",
+			"Martial Arts",
+			"Support Weapons",
+			"Language/Any",
+			"MedTech/Any",
+			"Tactics/Infantry",
+			"Sensor Operations",
+			"Small Arms",
+			"Thrown Weapons/Any",
+			"Streetwise/Affiliation",
+			"Tracking/Urban"
 		],
 		"Language": {
 			"Capellan": {
@@ -2733,6 +3299,46 @@
 					"Language/Japanese",
 					"Language/Swedenese",
 					"Language/German"
+				]
+			},
+			"Circinus": {
+				"primary": "Language/English",
+				"secondary": [
+					"Language/German",
+					"Language/Spanish"
+				]
+			},
+			"Magistracy": {
+				"primary": "Language/English",
+				"secondary": [
+					"Language/Greek",
+					"Language/Romanian",
+					"Language/Spanish",
+					"Language/Urdu"
+				]
+			},
+			"Marian": {
+				"primary": "Language/Latin",
+				"secondary": [
+					"Language/French",
+					"Language/German",
+					"Language/Greek",
+					"Language/Spanish",
+					"Language/Swedish"
+				]
+			},
+			"Outworlds": {
+				"primary": "Language/English",
+				"secondary": [
+					"Language/French",
+					"Language/Japanese"
+				]
+			},
+			"Taurian": {
+				"primary": "Language/English",
+				"secondary": [
+					"Language/French",
+					"Language/Spanish"
 				]
 			},
 			"Periphery": {

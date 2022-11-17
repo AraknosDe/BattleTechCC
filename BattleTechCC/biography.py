@@ -33,8 +33,9 @@ class Biography:
         self.name = name
         self.flexiblexpslist = []
         self.finished = False
+        self.lastchar = None
 
-    #def __repr__(self):
+        #def __repr__(self):
         #return "Biography(lifemodules=%r, choiceselectionslist)" % ([lm for lm in self.lifemodules], )
 
     def finish(self):
@@ -69,20 +70,25 @@ class Biography:
         self.applySAT(char, choiceoption.SAT, choiceoption.xps)
         char.prerequisites += choiceoption.prereq
 
-    def addlifemodule(self, lifemodule):
+    def addstage(self, lifemodule, choiceselections, flexchoiceselections):
         self.lifemodules.append(lifemodule)
+        self.choiceselectionslist.append(choiceselections)
+        self.flexiblexpslist.append(flexchoiceselections)
+
+    # def addlifemodule(self, lifemodule):
+    #     self.lifemodules.append(lifemodule)
 
     def changelifemodule(self, lifemodule):
         self.lifemodules[-1] = lifemodule
 
-    def addchoices(self, choiceselections):
-        self.choiceselectionslist.append(choiceselections)
+    # def addchoices(self, choiceselections):
+    #     self.choiceselectionslist.append(choiceselections)
 
     def changechoices(self, choiceselections):
         self.choiceselectionslist[-1] = choiceselections
 
-    def addflexxpchoice(self, choiceselections):
-        self.flexiblexpslist.append(choiceselections)
+    # def addflexxpchoice(self, choiceselections):
+    #     self.flexiblexpslist.append(choiceselections)
 
     def changeflexxpchoice(self, choiceselections):
         self.flexiblexpslist[-1] = choiceselections
@@ -112,12 +118,7 @@ class Biography:
     def getnonnonelms(self):
         return [lm for lm in self.lifemodules if lm is not None]
 
-    def getaffiliation(self):
-        affiliation = None
-        for lm in self.getnonnonelms():
-            if lm.affiliation is not None:
-                affiliation = lm.affiliation
-        return affiliation
+
 
     def getclanrestrict(self):
         for lm in self.getnonnonelms():
@@ -130,6 +131,8 @@ class Biography:
         if clanrestrict == "no" or checklm.clanrestrict == "no":
             return True
         return clanrestrict == checklm.clanrestrict
+
+
 
 
     # choiceselections = tuple[list[int], list[choiceselections]]
@@ -146,10 +149,15 @@ class Biography:
         char.maxxp += lifemodule.rebate
 
         if lifemodule.affiliation is not None:
-            if char.affiliation is not None:
-                print('affiliation conflict, {} vs {}:{}'.format(char.affiliation, lifemodule.name, lifemodule.affiliation))
-            else:
-                char.affiliation = lifemodule.affiliation
+            # affiliation being written first, ok or
+            # affiliation being overwritten by future module, ok
+            char.affiliation = lifemodule.affiliation
+            # if char.affiliation is not None:
+            #     #print('affiliation conflict, {} vs {}:{}'.format(char.affiliation, lifemodule.name, lifemodule.affiliation))
+            #     print("overriding affiliation a")
+            #
+            # else:
+            #     char.affiliation = lifemodule.affiliation
 
 
         for SAT, xps in lifemodule.getfixedxps().items():
@@ -173,6 +181,10 @@ class Biography:
                 print(choiceselections)
             return
 
+        if len(choiceselections) < 2:
+            print("trying to choose when no choices can be made")
+            return
+
         for choicelist, choiceindex, subchoiceselections in zip(choices, choiceselections[0], choiceselections[1]):
             if choiceindex >= 0 and choiceindex < len(choicelist):
                 self.apply(char, choicelist[choiceindex], subchoiceselections)
@@ -183,7 +195,48 @@ class Biography:
                 self.lifemodules, self.choiceselectionslist, self.flexiblexpslist):
             if lifemodule is not None:
                 self.applylifemoduletochar(char, lifemodule, choiceselections, flexiblexps)
+        self.lastchar = char
         return char
+
+    def applyaffiliationtochar(self, char, lifemodule, choiceselections):
+        lifemodule = copy.deepcopy(lifemodule)
+        print(lifemodule.name)
+
+        if lifemodule.affiliation is not None:
+            char.affiliation = lifemodule.affiliation
+            print("changing to {}".format(char.affiliation))
+
+        choices = lifemodule.choices
+        if len(choices) == 0:
+            if len(choiceselections) > 0 and len(choiceselections[0]) > 0:
+                print("applyaffiliationtochar trying to make choice when none are available")
+                print(choiceselections)
+            return
+
+        if len(choiceselections) < 2:
+            print("applyaffiliationtochar trying to choose when no choices can be made")
+            return
+
+        for choicelist, choiceindex, subchoiceselections in zip(choices, choiceselections[0], choiceselections[1]):
+            if choiceindex >= 0 and choiceindex < len(choicelist):
+                if isinstance(choicelist[choiceindex], Lifemodule):
+                    self.applyaffiliationtochar(char, choicelist[choiceindex], subchoiceselections)
+
+
+
+    def getaffiliation(self):
+        # affiliation = None
+        # char = Character(name=self.name, maxxp=self.maxxp)
+        # for lifemodule, choiceselections in zip(
+        #         self.lifemodules, self.choiceselectionslist):
+        #     if lifemodule is not None:
+        #         self.applyaffiliationtochar(char, lifemodule, choiceselections)
+        # # for lm in self.getnonnonelms():
+        # #     if lm.affiliation is not None:
+        # #         affiliation = lm.affiliation
+        # print("affiliation is {}".format(char.affiliation))
+        # return char.affiliation
+        return self.lastchar.affiliation
 
 
 
@@ -260,15 +313,19 @@ class Lifemodule:
         returnedchoices = []
         if bio is not None:
             for choice in self.choices:
-                if len(choice) == 1 and choice[0].name == 'Language/Affiliation':
-                    aff = bio.getaffiliation()
-                    if aff is None:
-                        #print('no affiliation when replacement required')
-                        return self.choices
-                    langlist = database.getlangall(aff)
+                if len(choice) == 1 and (database.isgenericlang(choice[0].name) or choice[0].name == "Language/Affiliation"):
+                    langlist = []
+                    if database.isgenericlang(choice[0].name):
+                        langlist = database.resolvegenericlang(choice[0].name)
+                    elif choice[0].name == "Language/Affiliation":
+                        if bio.getaffiliation() is None:
+                            #print('no affiliation when replacement required')
+                            return self.choices
+                        langlist = database.getlangall(bio.getaffiliation())
                     if len(langlist) == 0:
-                        print("affiliation {} has no languages associated".format(aff))
+                        print("choice {} with affiliation {} has no languages associated".format(choice[0].name,  bio.getaffiliation()))
                     optionlist = [ChoiceOption(lang, choice[0].xps, prereq=[]) for lang in langlist]
+                    # print(optionlist)
                     returnedchoices.append(optionlist)
                 else:
                     returnedchoices.append(choice)

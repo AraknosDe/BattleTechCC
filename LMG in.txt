@@ -1,0 +1,1 @@
+[Attributes] INT (+100 XP), WIL (+150 XP), Any one other (+50 XP); [Traits] Alternate ID (+50 XP), Connections (+200 XP), In For Life (–300 XP), Rank (+250 XP), Wealth (+50 XP); [Skills] Acting (+20 XP), Computers (+20 XP), Protocol/Affi liation (+20 XP); [Flexible XP] (+150 XP)

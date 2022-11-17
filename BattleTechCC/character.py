@@ -20,9 +20,10 @@ class Character:
         self.name = name
         self.prerequisites = []
         self.affiliation = None
+        self.baseline_age = 21
 
     def get_freexps(self):
-        return self.maxxp - self.spentxp
+        return self.maxxp - self.spentxp + (self.age - self.baseline_age) * 100
 
     def addSAT(self, SAT, xp):
         if database.isskill(SAT):
