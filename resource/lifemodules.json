@@ -913,6 +913,38 @@
 				{"Any": 10}
 			]
 		},
+		"Street (Stage 1)": {
+			"stage": 1,
+			"cost": 250,
+			"setage": 10,
+			"clanrestrict": "no",
+			"fixedxps": [
+				{"STR": 25},
+				{"BOD": -20},
+				{"RFL": 100},
+				{"WIL": 100},
+				{"CHA": -25},
+				{"EDG": 100},
+				{"Connections": 75},
+				{"Compulsion/Paranoid": -50},
+				{"Enemy": -100},
+				{"Illiterate": -75},
+				{"Reputation": -100},
+				{"Toughness": 200},
+				{"Wealth": -75},
+				{"Language/Affiliation": -5},
+				{"Martial Arts": 15},
+				{"Melee Weapons": 5},
+				{"Perception": 10},
+				{"Running": 10},
+				{"Stealth": 10},
+				{"Streetwise/Affiliation": 10},
+				{"Any": 10},
+				{"Any": 10},
+				{"Any": 10},
+				{"Any": 10}
+			]
+		},
 		"Fugitives": {
 			"stage": 1,
 			"cost": 225,
